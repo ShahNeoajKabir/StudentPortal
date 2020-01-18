@@ -1,0 +1,4 @@
+C:\StudentPortal\Server\StudentPortal\StudentPortal.DAL\bin\Debug\netstandard2.0\StudentPortal.DAL.deps.json
+C:\StudentPortal\Server\StudentPortal\StudentPortal.DAL\bin\Debug\netstandard2.0\StudentPortal.DAL.dll
+C:\StudentPortal\Server\StudentPortal\StudentPortal.DAL\obj\Debug\netstandard2.0\StudentPortal.DAL.AssemblyInfoInputs.cache
+C:\StudentPortal\Server\StudentPortal\StudentPortal.DAL\obj\Debug\netstandard2.0\StudentPortal.DAL.AssemblyInfo.cs
