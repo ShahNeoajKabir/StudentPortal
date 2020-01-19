@@ -9,6 +9,8 @@ namespace StudentPortal.DTO.DTO
         public Course()
         {
             CourseTeacherMapping = new HashSet<CourseTeacherMapping>();
+            StudentRegistration = new HashSet<StudentRegistration>();
+
 
         }
         public int CourseId { get; set; }
@@ -22,5 +24,7 @@ namespace StudentPortal.DTO.DTO
         public DateTime? UpdatedDate { get; set; }
         public int Status { get; set; }
         public ICollection<CourseTeacherMapping> CourseTeacherMapping { get; set; }
+
+        public ICollection<StudentRegistration> StudentRegistration { get; set; }
     }
 }

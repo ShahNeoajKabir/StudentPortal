@@ -6,6 +6,16 @@ namespace StudentPortal.DTO.DTO
 {
    public class Student
     {
+        public Student()
+        {
+            Marks = new HashSet<Marks>();
+            StudentRegistration = new HashSet<StudentRegistration>();
+            StudentFeeTransaction = new HashSet<StudentFeeTransaction>();
+            StudentPayment = new HashSet<StudentPayment>();
+
+
+
+        }
         public string StudentId { get; set; }
         public string StudentName { get; set; }
         public string FatherName { get; set; }
@@ -24,5 +34,15 @@ namespace StudentPortal.DTO.DTO
         public string UpdatedBy { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public int Status { get; set; }
+
+
+        public ICollection<Marks> Marks { get; set; }
+        public ICollection<StudentRegistration> StudentRegistration { get; set; }
+        public ICollection<StudentFeeTransaction> StudentFeeTransaction { get; set; }
+
+        public ICollection<StudentPayment> StudentPayment { get; set; }
+
+
+
     }
 }

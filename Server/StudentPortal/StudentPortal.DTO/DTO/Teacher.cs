@@ -9,6 +9,8 @@ namespace StudentPortal.DTO.DTO
         public Teacher()
         {
             CourseTeacherMapping = new HashSet<CourseTeacherMapping>();
+            Attendances = new HashSet<Attendances>();
+
         }
         public int TeacherId { get; set; }
         public string TeacherName { get; set; }
@@ -26,6 +28,8 @@ namespace StudentPortal.DTO.DTO
         public int Status { get; set; }
 
         public ICollection<CourseTeacherMapping> CourseTeacherMapping { get; set; }
+        public ICollection<Attendances> Attendances { get; set; }
+
 
     }
 }

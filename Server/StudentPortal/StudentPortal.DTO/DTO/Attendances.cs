@@ -4,11 +4,20 @@ using System.Text;
 
 namespace StudentPortal.DTO.DTO
 {
-   public class Attendances
+    public class Attendances
     {
+        public Attendances()
+        {
+            Student = new Student();
+            Course = new Course();
+            Teacher = new Teacher();
+
+        }
         public int AttendanceId { get; set; }
-        public int CourseTeacherId { get; set; }
+        public int CourseId { get; set; }
+        public int TeacherId { get; set; }
         public string StudentId { get; set; }
+
         public bool Attendance { get; set; }
         public DateTime AttendanceDate { get; set; }
         public int SemesterId { get; set; }
@@ -17,6 +26,11 @@ namespace StudentPortal.DTO.DTO
         public string UpdatedBy { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public int Status { get; set; }
+
+        public virtual Student Student { get; set; }
+        public virtual Course Course { get; set; }
+        public virtual Teacher Teacher { get; set; }
+
 
     }
 }

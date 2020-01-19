@@ -9,6 +9,7 @@ namespace StudentPortal.DTO.DTO
         public Semester()
         {
             CourseTeacherMapping = new HashSet<CourseTeacherMapping>();
+            Marks = new HashSet<Marks>();
         }
         public int SemesterId { get; set; }
         public string SemesterName { get; set; }
@@ -19,5 +20,7 @@ namespace StudentPortal.DTO.DTO
         public int Status { get; set; }
 
         public ICollection<CourseTeacherMapping> CourseTeacherMapping { get; set; }
+        public ICollection<Marks> Marks { get; set; }
+
     }
 }

@@ -11,6 +11,7 @@ namespace StudentPortal.DTO.DTO
             Course = new Course();
             Teacher = new Teacher();
             Semester = new Semester();
+            Marks = new HashSet<Marks>();
         }
         public int CourseTeacherId { get; set; }
         public int CourseId { get; set; }
@@ -26,6 +27,9 @@ namespace StudentPortal.DTO.DTO
         public virtual Course Course { get; set; }
         public virtual Teacher Teacher { get; set; }
         public virtual Semester Semester { get; set; }
+
+        public ICollection<Marks> Marks { get; set; }
+
 
 
     }
