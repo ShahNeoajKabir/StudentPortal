@@ -12,6 +12,8 @@ namespace StudentPortal.DTO.DTO
             StudentRegistration = new HashSet<StudentRegistration>();
             StudentFeeTransaction = new HashSet<StudentFeeTransaction>();
             StudentPayment = new HashSet<StudentPayment>();
+            Attendances = new HashSet<Attendances>(); 
+
 
 
 
@@ -41,6 +43,8 @@ namespace StudentPortal.DTO.DTO
         public ICollection<StudentFeeTransaction> StudentFeeTransaction { get; set; }
 
         public ICollection<StudentPayment> StudentPayment { get; set; }
+        public ICollection<Attendances> Attendances { get; set; }
+
 
 
 

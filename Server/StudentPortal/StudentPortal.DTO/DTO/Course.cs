@@ -10,6 +10,8 @@ namespace StudentPortal.DTO.DTO
         {
             CourseTeacherMapping = new HashSet<CourseTeacherMapping>();
             StudentRegistration = new HashSet<StudentRegistration>();
+            Attendances = new HashSet<Attendances>(); 
+
 
 
         }
@@ -26,5 +28,7 @@ namespace StudentPortal.DTO.DTO
         public ICollection<CourseTeacherMapping> CourseTeacherMapping { get; set; }
 
         public ICollection<StudentRegistration> StudentRegistration { get; set; }
+        public ICollection<Attendances> Attendances { get; set; }
+
     }
 }
