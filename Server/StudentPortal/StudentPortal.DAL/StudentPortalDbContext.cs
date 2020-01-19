@@ -6,7 +6,7 @@ using System.Text;
 
 namespace StudentPortal.DAL
 {
-    class StudentPortalDbContext: DbContext
+   public class StudentPortalDbContext: DbContext
     {
         public StudentPortalDbContext(DbContextOptions<StudentPortalDbContext> options)
                : base(options)

@@ -1,4 +1,11 @@
 C:\StudentPortal\Server\StudentPortal\StudentPortal.DAL\bin\Debug\netstandard2.0\StudentPortal.DAL.deps.json
 C:\StudentPortal\Server\StudentPortal\StudentPortal.DAL\bin\Debug\netstandard2.0\StudentPortal.DAL.dll
+C:\StudentPortal\Server\StudentPortal\StudentPortal.DAL\bin\Debug\netstandard2.0\StudentPortal.DAL.pdb
+C:\StudentPortal\Server\StudentPortal\StudentPortal.DAL\bin\Debug\netstandard2.0\StudentPortal.DTO.dll
+C:\StudentPortal\Server\StudentPortal\StudentPortal.DAL\bin\Debug\netstandard2.0\StudentPortal.DTO.pdb
+C:\StudentPortal\Server\StudentPortal\StudentPortal.DAL\obj\Debug\netstandard2.0\StudentPortal.DAL.csprojAssemblyReference.cache
 C:\StudentPortal\Server\StudentPortal\StudentPortal.DAL\obj\Debug\netstandard2.0\StudentPortal.DAL.AssemblyInfoInputs.cache
 C:\StudentPortal\Server\StudentPortal\StudentPortal.DAL\obj\Debug\netstandard2.0\StudentPortal.DAL.AssemblyInfo.cs
+C:\StudentPortal\Server\StudentPortal\StudentPortal.DAL\obj\Debug\netstandard2.0\StudentPortal.DAL.csproj.CopyComplete
+C:\StudentPortal\Server\StudentPortal\StudentPortal.DAL\obj\Debug\netstandard2.0\StudentPortal.DAL.dll
+C:\StudentPortal\Server\StudentPortal\StudentPortal.DAL\obj\Debug\netstandard2.0\StudentPortal.DAL.pdb
