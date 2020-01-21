@@ -79,6 +79,9 @@
         "packagesPath": "C:\\Users\\88015\\.nuget\\packages\\",
         "outputPath": "C:\\StudentPortal\\Server\\StudentPortal\\StudentPortal.DTO\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\88015\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
