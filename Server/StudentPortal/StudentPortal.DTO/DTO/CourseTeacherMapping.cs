@@ -13,7 +13,7 @@ namespace StudentPortal.DTO.DTO
             Semester = new Semester();
             Marks = new HashSet<Marks>();
         }
-        public int CourseTeacherId { get; set; }
+        public int CourseTeacherMappingId { get; set; }
         public int CourseId { get; set; }
         public int TeacherId { get; set; }
         public int SemesterId { get; set; }
