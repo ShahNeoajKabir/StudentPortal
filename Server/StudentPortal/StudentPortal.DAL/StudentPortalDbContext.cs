@@ -46,135 +46,7 @@ namespace StudentPortal.DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //    modelBuilder.Entity<User>(entity =>
-            //    {
-            //        entity.HasKey(e => e.AccountNo);
-
-            //        entity.HasIndex(e => e.AccountDetailId);
-
-            //        entity.Property(e => e.AccountNo).ValueGeneratedNever();
-
-            //        entity.Property(e => e.AccountDetailId).HasColumnName("AccountDetailID");
-
-            //        entity.HasOne(d => d.AccountDetail)
-            //            .WithOne(p => p.Account);
-            //    });
-
-            //    modelBuilder.Entity<AccountDetail>(entity =>
-            //    {
-
-            //        entity.HasIndex(e => e.PermanentAddressId);
-
-            //        entity.HasIndex(e => e.PresentAddressId);
-
-            //        entity.Property(e => e.AccountDetailId).HasColumnName("AccountDetailID");
-
-
-            //        entity.Property(e => e.IdentityNo).HasColumnName("NID");
-
-            //        entity.Property(e => e.PermanentAddressId).HasColumnName("PermanentAddressID");
-
-            //        entity.Property(e => e.PresentAddressId).HasColumnName("PresentAddressID");
-
-            //        entity.HasOne(d => d.PermanentAddress)
-            //            .WithMany(p => p.AccountDetailPermanentAddress)
-            //            .HasForeignKey(d => d.PermanentAddressId);
-
-            //        entity.HasOne(d => d.PresentAddress)
-            //            .WithMany(p => p.AccountDetailPresentAddress)
-            //            .HasForeignKey(d => d.PresentAddressId);
-            //    });
-
-            //    modelBuilder.Entity<Address>(entity =>
-            //    {
-            //        entity.Property(e => e.AddressId).HasColumnName("AddressID");
-
-            //        entity.Property(e => e.DistrictId).HasColumnName("DistrictID");
-
-            //    });
-
-            //    modelBuilder.Entity<AudiLog>(entity =>
-            //    {
-            //        entity.HasKey(e => e.AuditLogId);
-
-            //        entity.Property(e => e.ActionId).HasColumnName("ActionID");
-
-            //        entity.Property(e => e.LogDateTimeUtc).HasColumnName("LogDateTimeUTC");
-
-            //        entity.Property(e => e.LogTypeId).HasColumnName("LogTypeID");
-
-            //        entity.Property(e => e.ModuleId).HasColumnName("ModuleID");
-
-            //        entity.Property(e => e.SessionId).HasColumnName("SessionID");
-
-            //        entity.Property(e => e.UserId).HasColumnName("UserID");
-            //    });
-
-            //    modelBuilder.Entity<ZoneDetail>(entity =>
-            //    {
-            //        entity.HasKey(e => e.ZoneId);
-
-            //        entity.Property(e => e.ZoneId).HasColumnName("ZoneID");
-            //    });
-
-            //    modelBuilder.Entity<Vendor>(entity =>
-            //    {
-            //        entity.HasKey(e => e.VendorId);
-
-            //        entity.Property(e => e.VendorId).HasColumnName("VendorID");
-            //    });
-
-            //    modelBuilder.Entity<SalesForceReport>(entity =>
-            //    {
-            //        entity.HasKey(e => e.SalesForceReportId);
-
-            //        entity.Property(e => e.SalesForceReportId).HasColumnName("SalesForceReportID");
-            //    });
-
-
-            //    modelBuilder.Entity<PumpDetail>(entity =>
-            //    {
-            //        entity.HasKey(e => e.PumpId);
-
-            //        entity.Property(e => e.PumpId).HasColumnName("BoothID");
-
-            //        entity.Property(e => e.ZoneId).HasColumnName("ZoneID");
-
-            //        entity.Property(e => e.VendorId).HasColumnName("VendorID");
-
-            //        entity.HasOne(d => d.Zone)
-            //            .WithMany(p => p.Pump)
-            //            .HasForeignKey(d => d.ZoneId);
-            //        entity.Ignore(x => x.NumberOfDevices);
-
-            //        entity.HasOne(d => d.Vendor)
-            //           .WithMany(p => p.Pump)
-            //           .HasForeignKey(d => d.VendorId);
-            //        entity.Ignore(c => c.Balance);
-            //        entity.Ignore(c => c.VendorName);
-            //        entity.Ignore(c => c.ZoneName);
-
-
-            //    });
-
-            //    modelBuilder.Entity<CardDetail>(entity =>
-            //    {
-            //        entity.HasKey(e => e.CardNumber);
-
-            //        entity.HasIndex(e => e.AccountNo);
-
-            //        entity.HasIndex(e => e.RefCardNumber);
-
-            //        entity.Property(e => e.CardNumber).ValueGeneratedNever();
-
-            //        entity.HasOne(d => d.AccountNoNavigation)
-            //            .WithMany(p => p.CardDetail)
-            //            .HasForeignKey(d => d.AccountNo);
-
-            //        entity.HasOne(d => d.RefCardNumberNavigation)
-            //            .WithMany(p => p.InverseRefCardNumberNavigation)
-            //            .HasForeignKey(d => d.RefCardNumber);
-            //    });
+            
 
             modelBuilder.Entity<Attendances>(entity =>
             {
@@ -234,7 +106,7 @@ namespace StudentPortal.DAL
 
                 entity.HasOne(e => e.CourseTeacherMapping)
                 .WithMany(e => e.Marks)
-                .HasForeignKey(e => e.CourseTeacherMapping);
+                .HasForeignKey(e => e.CourseTeacherMappingId);
 
             });
 

@@ -1,0 +1,77 @@
+
+<aside class="main-sidebar">
+
+  <section class="sidebar">
+
+      <div class="user-panel">
+          <div class="pull-left image">
+              <!-- <img src="assets/img/user1.jpg" class="img-circle" alt="User Image"> -->
+          </div>
+          <div class="pull-left info">
+              <p>{{authService.getLoggedUsername()}}</p>
+              <a href="#">
+                  <i class="fa fa-circle text-success"></i> Online</a>
+          </div>
+      </div>
+
+      <!-- ADMIN AND SUPER ADMIN -->
+      <!-- <ul *ngIf="authorizeService.IsAdmin() || authorizeService.IsSuperAdmin()" class="sidebar-menu" -->
+        <ul data-widget="tree">
+          <li routerLinkActive="active">
+              <!-- <a routerLink="/dashboard"   data-toggle="push-menu"> -->
+              <a routerLink="/dashboard" class="mobile_menu">
+                  <i class="fa fa-dashboard"></i>
+                  <span>Dashboard</span>
+              </a>
+          </li>
+          <li routerLinkActive="active">
+              <a routerLink="/account" class="mobile_menu">
+                  <i class="fa fa-users"></i>
+                  <span>Account</span>
+              </a>
+          </li>
+          <li routerLinkActive="active">
+              <a routerLink="/daily-report" class="mobile_menu">
+                  <i class="fa fa-calendar-minus-o"></i>
+                  <span>Daily Report</span>
+              </a>
+          </li>
+
+          <!-- <li routerLinkActive="active">
+              <a routerLink="/wasa-recharge-request" class="mobile_menu">
+                  <i class="fa fa-calendar-minus-o"></i>
+                  <span>Recharge Request</span>
+              </a>
+          </li> -->
+
+          <li routerLinkActive="active">
+              <a routerLink="/recharge" class="mobile_menu">
+                  <i class="fa fa-money"></i>
+                  <span>Recharge</span>
+              </a>
+          </li>
+          <li routerLinkActive="active">
+              <a routerLink="/bkashtransaction" class="mobile_menu">
+                  <i class="fa fa-money"></i>
+                  <span>BKash Transaction</span>
+              </a>
+          </li>
+          <li routerLinkActive="active">
+              <a routerLink="/water-transaction" class="mobile_menu">
+                  <i class="fa fa-server"></i>
+                  <span>Water Transaction</span>
+              </a>
+          </li>
+          <li routerLinkActive="active">
+              <a routerLink="/card" class="mobile_menu">
+                  <i class="fa fa-credit-card"></i>
+                  <span>Card</span>
+              </a>
+          </li>
+      </ul>
+
+
+
+
+  </section>
+</aside>

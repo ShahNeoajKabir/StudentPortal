@@ -18,5 +18,7 @@ namespace StudentPortal.DTO.DTO
         public string UpdatedBy { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public int Status { get; set; }
+        public string Image { get; set; }
+
     }
 }

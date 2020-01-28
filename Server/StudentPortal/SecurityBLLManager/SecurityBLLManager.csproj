@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StudentPortal.DAL\StudentPortal.DAL.csproj" />
+    <ProjectReference Include="..\StudentPortal.DTO\StudentPortal.DTO.csproj" />
+  </ItemGroup>
+
+</Project>

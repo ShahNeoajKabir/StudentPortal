@@ -14,7 +14,7 @@ namespace StudentPortal.DTO.DTO
         }
         public int MarksId { get; set; }
         public decimal Mark { get; set; }
-        public int CourseTeacherId { get; set; }
+        public int CourseTeacherMappingId { get; set; }
         public string StudentId { get; set; }
         public short MarksType { get; set; }
         public int SemesterId { get; set; }
