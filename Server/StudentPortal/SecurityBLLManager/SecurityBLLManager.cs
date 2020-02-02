@@ -4,6 +4,7 @@ using StudentPortal.DTO.ViewModel;
 using System;
 using System.Threading.Tasks;
 using System.Linq;
+using StudentPortal.Common.Utility;
 
 namespace SecurityBLLManager
 {
@@ -20,12 +21,11 @@ namespace SecurityBLLManager
             User objuser = new User();
             try
             {
+                vMLogin.Password = new EncryptionService().Encrypt(vMLogin.Password);
                 objuser =  _studentPortalDbContext.User.Where(p => p.UserName == vMLogin.UserName && p.Password == vMLogin.Password).Select(u=> new User() { 
                 UserTypeId=u.UserTypeId,
                 UserName=u.UserName,
                 Email=u.Email
-                
-                
                 }).FirstOrDefault();
 
              

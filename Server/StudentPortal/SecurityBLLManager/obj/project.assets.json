@@ -589,6 +589,16 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
+      "StudentPortal.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/StudentPortal.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StudentPortal.Common.dll": {}
+        }
+      },
       "StudentPortal.DAL/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -2589,6 +2599,11 @@
         "system.threading.tasks.nuspec"
       ]
     },
+    "StudentPortal.Common/1.0.0": {
+      "type": "project",
+      "path": "../StudentPortal.Common/StudentPortal.Common.csproj",
+      "msbuildProject": "../StudentPortal.Common/StudentPortal.Common.csproj"
+    },
     "StudentPortal.DAL/1.0.0": {
       "type": "project",
       "path": "../StudentPortal.DAL/StudentPortal.DAL.csproj",
@@ -2603,6 +2618,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
+      "StudentPortal.Common >= 1.0.0",
       "StudentPortal.DAL >= 1.0.0",
       "StudentPortal.DTO >= 1.0.0"
     ]
@@ -2637,6 +2653,9 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
+            "C:\\StudentPortal\\Server\\StudentPortal\\StudentPortal.Common\\StudentPortal.Common.csproj": {
+              "projectPath": "C:\\StudentPortal\\Server\\StudentPortal\\StudentPortal.Common\\StudentPortal.Common.csproj"
+            },
             "C:\\StudentPortal\\Server\\StudentPortal\\StudentPortal.DAL\\StudentPortal.DAL.csproj": {
               "projectPath": "C:\\StudentPortal\\Server\\StudentPortal\\StudentPortal.DAL\\StudentPortal.DAL.csproj"
             },

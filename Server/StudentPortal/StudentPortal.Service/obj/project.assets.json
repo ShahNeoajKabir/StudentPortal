@@ -4336,6 +4336,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "StudentPortal.Common": "1.0.0",
           "StudentPortal.DAL": "1.0.0",
           "StudentPortal.DTO": "1.0.0"
         },
@@ -4344,6 +4345,16 @@
         },
         "runtime": {
           "bin/placeholder/SecurityBLLManager.dll": {}
+        }
+      },
+      "StudentPortal.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/StudentPortal.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StudentPortal.Common.dll": {}
         }
       },
       "StudentPortal.DAL/1.0.0": {
@@ -11841,6 +11852,11 @@
       "type": "project",
       "path": "../SecurityBLLManager/SecurityBLLManager.csproj",
       "msbuildProject": "../SecurityBLLManager/SecurityBLLManager.csproj"
+    },
+    "StudentPortal.Common/1.0.0": {
+      "type": "project",
+      "path": "../StudentPortal.Common/StudentPortal.Common.csproj",
+      "msbuildProject": "../StudentPortal.Common/StudentPortal.Common.csproj"
     },
     "StudentPortal.DAL/1.0.0": {
       "type": "project",

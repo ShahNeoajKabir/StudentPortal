@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
+using StudentPortal.Common.Utility;
 
 namespace SecurityBLLManager
 {
@@ -17,6 +18,7 @@ namespace SecurityBLLManager
         }
         public async Task<User> AddUser(User user)
         {
+            user.Password = new EncryptionService().Encrypt(user.Password);
            await _db.User.AddAsync(user);
            await _db.SaveChangesAsync();
             return user;
