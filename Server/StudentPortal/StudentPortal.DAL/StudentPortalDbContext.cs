@@ -27,7 +27,7 @@ namespace StudentPortal.DAL
         //public virtual DbSet<Parents> Parents { get; set; }
         //public virtual DbSet<Routine> Routine { get; set; }
         //public virtual DbSet<Semester> Semester { get; set; }
-        //public virtual DbSet<Student> Student { get; set; }
+        public virtual DbSet<Student> Student { get; set; }
         //public virtual DbSet<StudentFeeTransaction> StudentFeeTransaction { get; set; }
         //public virtual DbSet<StudentPayment> StudentPayment { get; set; }
         //public virtual DbSet<StudentRegistration> StudentRegistration { get; set; }
@@ -78,7 +78,7 @@ namespace StudentPortal.DAL
 
             //    entity.Property(e => e.CreatedDate);
 
-                
+
 
             //    entity.Property(e => e.UpdatedBy)
             //        .HasMaxLength(30)
@@ -86,7 +86,7 @@ namespace StudentPortal.DAL
 
             //    entity.Property(e => e.UpdatedDate);
 
-                
+
             //});
 
             //modelBuilder.Entity<Clearence>(entity =>
@@ -306,54 +306,13 @@ namespace StudentPortal.DAL
             //});
 
 
-            //modelBuilder.Entity<Student>(entity =>
-            //{
-            //    entity.HasKey(e => e.StudentId);
+            modelBuilder.Entity<Student>(entity =>
+            {
+                entity.HasKey(e => e.StudentId);
 
-            //    entity.Property(e => e.Address)
-            //    .IsRequired()
-            //    .HasMaxLength(80);
+            
 
-            //    entity.Property(e => e.Batch)
-            //    .IsRequired()
-            //    .HasMaxLength(20);
-
-            //    entity.Property(e => e.BloodGroup)
-            //    .IsRequired()
-            //    .HasMaxLength(10);
-
-            //    entity.Property(e => e.Email)
-            //    .IsRequired()
-            //    .HasMaxLength(50);
-
-            //    entity.Property(e => e.CreatedBy)
-            //       .IsRequired()
-            //       .HasMaxLength(30)
-            //       .IsUnicode(false);
-
-            //    entity.Property(e => e.CreatedDate);
-
-
-
-            //    entity.Property(e => e.UpdatedBy)
-            //        .HasMaxLength(30)
-            //        .IsUnicode(false);
-
-            //    entity.Property(e => e.UpdatedDate);
-
-            //    entity.Property(e => e.DateOfBirth)
-            //    .IsRequired()
-            //    .HasMaxLength(20);
-
-            //    entity.Property(e => e.FatherName)
-            //    .IsRequired()
-            //    .HasMaxLength(30);
-
-            //    entity.Property(e => e.Gender)
-            //    .IsRequired()
-            //    .HasMaxLength(10);
-
-            //});
+            });
 
             //modelBuilder.Entity<StudentFeeTransaction>(entity =>
             //{
@@ -490,17 +449,17 @@ namespace StudentPortal.DAL
 
             });
 
-            //modelBuilder.Entity<UserMapping>(entity =>
-            //{
-            //    entity.HasKey(e => e.UserMappingId);
+            modelBuilder.Entity<UserMapping>(entity =>
+            {
+                entity.HasKey(e => e.UserMappingId);
 
-            //    entity.HasIndex(e => e.UserId);
-            //    entity.HasOne(e => e.User)
-            //    .WithMany(e => e.UserMapping)
-            //    .HasForeignKey(e => e.UserId)
-            //    .OnDelete(DeleteBehavior.Cascade);
+                //entity.HasIndex(e => e.UserId);
+                //entity.HasOne(e => e.User)
+                //.WithMany(e => e.UserMapping)
+                //.HasForeignKey(e => e.UserId)
+                //.OnDelete(DeleteBehavior.Cascade);
 
-            //});
+            });
         }
     }
 }

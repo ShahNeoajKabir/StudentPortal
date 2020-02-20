@@ -29,7 +29,7 @@ namespace Service.Portal.Controllers
 
 
         }
-        [HttpPost("Gets")]
+        [HttpGet("Gets")]
         public string Gets()
         {
             return "Hello";

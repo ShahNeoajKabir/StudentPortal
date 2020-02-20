@@ -6,7 +6,9 @@ namespace StudentPortal.DTO.DTO
 {
    public class Student
     {
-        public string StudentId { get; set; }
+        public int StudentId { get; set; }
+        public string StudentRule { get; set; }
+
         public string StudentName { get; set; }
         public string FatherName { get; set; }
         public string MotherName { get; set; }
@@ -28,12 +30,12 @@ namespace StudentPortal.DTO.DTO
 
 
 
-        public ICollection<Marks> Marks { get; set; }
-        public ICollection<StudentRegistration> StudentRegistration { get; set; }
-        public ICollection<StudentFeeTransaction> StudentFeeTransaction { get; set; }
+        //public ICollection<Marks> Marks { get; set; }
+        //public ICollection<StudentRegistration> StudentRegistration { get; set; }
+        //public ICollection<StudentFeeTransaction> StudentFeeTransaction { get; set; }
 
-        public ICollection<StudentPayment> StudentPayment { get; set; }
-        public ICollection<Attendances> Attendances { get; set; }
+        //public ICollection<StudentPayment> StudentPayment { get; set; }
+        //public ICollection<Attendances> Attendances { get; set; }
 
 
 

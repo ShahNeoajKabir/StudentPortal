@@ -1,0 +1,18 @@
+<table>
+    <tr>
+        <th>Student Name</th>
+        <th>Email Address</th>
+        <th>Mobile Number</th>
+        <th>Status</th>
+    </tr>
+    <tr *ngFor="let objuser of lstuser">
+        <td >{{objstudent.StudentName}}</td>
+        <td>{{objstudent.Email}}</td>
+        <td>{{objstudent.MobileNo}}</td>
+        <td>{{objstudent.Status}}</td>
+        <td> <a routerLink="{{ objstudent.StudentId }}/edit"
+        >Edit
+        </a></td>
+
+    </tr>
+</table>

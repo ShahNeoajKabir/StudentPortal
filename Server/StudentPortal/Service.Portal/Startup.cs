@@ -12,6 +12,8 @@ using Microsoft.Extensions.Logging;
 using Security.BLLManager;
 using StudentPortal.DAL;
 using Microsoft.EntityFrameworkCore;
+using SecurityBLLManager;
+using Newtonsoft.Json.Serialization;
 namespace Service.Portal
 {
     public class Startup
@@ -26,6 +28,12 @@ namespace Service.Portal
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddControllers()
+                    .AddNewtonsoftJson(options =>
+                    {
+                        options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+                    });
             services.AddControllers();
             services.AddDbContext<StudentPortalDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Connection")), ServiceLifetime.Transient);
             services.AddCors(options =>
@@ -36,6 +44,10 @@ namespace Service.Portal
                     .AllowAnyHeader());
             });
             services.AddScoped<ISecurityBLLManager, Security.BLLManager.SecurityBLLManager>();
+            services.AddScoped<IUserBLLManager, UserBLLManager>();
+            services.AddScoped<IStudentBLLManager, StudentBLLManager>();
+
+
 
         }
 

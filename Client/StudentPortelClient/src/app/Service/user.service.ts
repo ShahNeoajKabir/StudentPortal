@@ -9,7 +9,10 @@ import { ApiConstant } from '../Common/ApiConstant';
 export class UserService {
 
   constructor(private httpClient: HttpClient) { }
-  public AddUser(obj: User) {
+  public AddUser(obj: any ) {
     return this.httpClient.post(ApiConstant.UserApi.AddUser, obj);
+  }
+  public GetAll() {
+    return this.httpClient.get(ApiConstant.UserApi.GetAllUser);
   }
 }

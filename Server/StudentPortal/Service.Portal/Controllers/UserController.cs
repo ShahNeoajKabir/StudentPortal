@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SecurityBLLManager;
 using StudentPortal.DTO.DTO;
+using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace Service.Portal.Controllers
 {
@@ -13,17 +15,61 @@ namespace Service.Portal.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IUserBLLManager _userBLLManager;
+        private readonly IUserBLLManager userBLLManager;
         public UserController(IUserBLLManager userBLLManager)
         {
-            _userBLLManager = userBLLManager;
+            this.userBLLManager = userBLLManager;
         }
+
         [HttpPost]
         [Route("AddUser")]
-        public void AddUser([FromBody]User user)
+        public int AddUser([FromBody]object objuser)
         {
-            _userBLLManager.AddUser(user);
+            try
+            {
+                User user =JsonConvert.DeserializeObject<User>(objuser.ToString());
+                 this.userBLLManager.AddUser(user);
+                return 1;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+            
         }
-      
+        [HttpGet]
+        [Route("GetAll")]
+        public List<User> GetAll()
+        {
+            try
+            {
+                return this.userBLLManager.GetAll();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+
+        }
+        
+        [HttpGet]
+        [Route("Gets")]
+
+        public string Gets()
+        {
+
+            return "hello";
+        }
+        //[HttpPost]
+        //[Route("AddUser")]
+        //public void AddUser([FromBody]User user)
+        //{
+        //    _userBLLManager.AddUser(user);
+        //}
+
     }
 }

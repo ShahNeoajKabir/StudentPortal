@@ -1,19 +1,19 @@
 <form>
     <div class="form-group">
-        <label for="UserName">User Name</label>
-        <input type="text" [(ngModel)]="objuser.UserName" class="form-control"  autocomplete="off">
+        <label>User Name</label>
+        <input type="text" [(ngModel)]="objuser.UserName" name="UserName" class="form-control"  autocomplete="off">
       </div>
     <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" [(ngModel)]="objuser.Email"  aria-describedby="emailHelp" autocomplete="off">
+      <label>Email address</label>
+      <input type="email" class="form-control" [(ngModel)]="objuser.Email" name="Email" aria-describedby="emailHelp" autocomplete="off">
     </div>
     <div class="form-group">
-        <label for="MobileNumber">Mobile Number</label>
-        <input type="number" [(ngModel)]="objuser.MobileNo" class="form-control"  autocomplete="off">
+        <label>Mobile Number</label>
+        <input type="number" [(ngModel)]="objuser.MobileNo" name="Mobile" class="form-control"  autocomplete="off">
       </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" [(ngModel)]="objuser.Password" class="form-control" >
+      <label>Password</label>
+      <input type="password" [(ngModel)]="objuser.Password" name="Password" class="form-control" >
     </div>
     <button type="submit" (click)="AddUser()" class="btn btn-primary">Add User</button>
   </form> 

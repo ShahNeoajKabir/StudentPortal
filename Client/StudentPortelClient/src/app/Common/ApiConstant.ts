@@ -5,17 +5,14 @@ export module ApiConstant {
      };
 
      export const UserApi = {
-        AddUser: SERVER_URI + 'User/AddUser'
+        AddUser: SERVER_URI + 'User/AddUser',
+        GetAllUser: SERVER_URI + 'User/GetAll'
+
+    };
+    export const StudentApi = {
+        AddStudent: SERVER_URI + 'Student/AddStudent',
+        GetAllStudent:  SERVER_URI + 'Student/GetAll'
+        
+
     };
    }
-// export module ApiConstant{
-
-//     export const AccountApi = {
-//         Login: 'Security/Login'
-
-//     };
-//     export const UserApi={
-//         AddUser: 'User/AddUser'
-//     }
-
-// }
