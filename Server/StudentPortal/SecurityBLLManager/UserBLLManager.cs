@@ -18,7 +18,11 @@ namespace SecurityBLLManager
         }
         public async Task<User> AddUser(User user)
         {
-            user.Password = new EncryptionService().Encrypt(user.Password);
+            user.CreatedBy = "Bappy";
+            user.CreatedDate = DateTime.Now;
+            user.UserTypeId = 1;
+
+            //user.Password = new EncryptionService().Encrypt(user.Password);
            await _db.User.AddAsync(user);
            await _db.SaveChangesAsync();
             return user;

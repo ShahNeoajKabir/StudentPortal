@@ -6,12 +6,6 @@ namespace StudentPortal.DTO.DTO
 {
    public class Marks
     {
-        public Marks()
-        {
-            Student = new Student();
-            CourseTeacherMapping = new CourseTeacherMapping();
-            Semester = new Semester();
-        }
         public int MarksId { get; set; }
         public decimal Mark { get; set; }
         public int CourseTeacherMappingId { get; set; }

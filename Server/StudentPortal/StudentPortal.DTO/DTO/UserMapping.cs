@@ -6,10 +6,6 @@ namespace StudentPortal.DTO.DTO
 {
    public class UserMapping
     {
-        public UserMapping()
-        {
-            User = new User();
-        }
         public int UserMappingId { get; set; }
         public int UserId { get; set; }
         public int UserTypeId { get; set; }

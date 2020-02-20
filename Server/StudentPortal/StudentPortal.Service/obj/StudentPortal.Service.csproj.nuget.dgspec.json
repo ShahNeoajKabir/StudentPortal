@@ -173,7 +173,7 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[2.2.4, )"
+              "version": "[2.1.14, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -282,6 +282,15 @@
             "projectReferences": {
               "C:\\StudentPortal\\Server\\StudentPortal\\SecurityBLLManager\\SecurityBLLManager.csproj": {
                 "projectPath": "C:\\StudentPortal\\Server\\StudentPortal\\SecurityBLLManager\\SecurityBLLManager.csproj"
+              },
+              "C:\\StudentPortal\\Server\\StudentPortal\\StudentPortal.Common\\StudentPortal.Common.csproj": {
+                "projectPath": "C:\\StudentPortal\\Server\\StudentPortal\\StudentPortal.Common\\StudentPortal.Common.csproj"
+              },
+              "C:\\StudentPortal\\Server\\StudentPortal\\StudentPortal.DAL\\StudentPortal.DAL.csproj": {
+                "projectPath": "C:\\StudentPortal\\Server\\StudentPortal\\StudentPortal.DAL\\StudentPortal.DAL.csproj"
+              },
+              "C:\\StudentPortal\\Server\\StudentPortal\\StudentPortal.DTO\\StudentPortal.DTO.csproj": {
+                "projectPath": "C:\\StudentPortal\\Server\\StudentPortal\\StudentPortal.DTO\\StudentPortal.DTO.csproj"
               }
             }
           }
@@ -304,7 +313,11 @@
             "Microsoft.AspNetCore.Razor.Design": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.1.2, )"
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.1.14, )"
             },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",

@@ -6,11 +6,6 @@ namespace StudentPortal.DTO.DTO
 {
    public class User
     {
-        public User()
-        {
-            UserMapping = new HashSet<UserMapping>();
-
-        }
         public int UserId { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\StudentPortal.Common\StudentPortal.Common.csproj" />
     <ProjectReference Include="..\StudentPortal.DAL\StudentPortal.DAL.csproj" />
     <ProjectReference Include="..\StudentPortal.DTO\StudentPortal.DTO.csproj" />
   </ItemGroup>

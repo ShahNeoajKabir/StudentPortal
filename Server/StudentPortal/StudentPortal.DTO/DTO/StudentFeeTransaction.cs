@@ -6,10 +6,6 @@ namespace StudentPortal.DTO.DTO
 {
    public class StudentFeeTransaction
     {
-        public StudentFeeTransaction()
-        {
-            Student = new Student();
-        }
         public int StudentFeeTransactionId { get; set; }
         public string StudentId { get; set; }
         public int StudentRegistrationId { get; set; }

@@ -1,0 +1,8 @@
+C:\StudentPortal\Server\StudentPortal\StudentPortal.Common\bin\Debug\netstandard2.0\StudentPortal.Common.deps.json
+C:\StudentPortal\Server\StudentPortal\StudentPortal.Common\bin\Debug\netstandard2.0\StudentPortal.Common.dll
+C:\StudentPortal\Server\StudentPortal\StudentPortal.Common\bin\Debug\netstandard2.0\StudentPortal.Common.pdb
+C:\StudentPortal\Server\StudentPortal\StudentPortal.Common\obj\Debug\netstandard2.0\StudentPortal.Common.csprojAssemblyReference.cache
+C:\StudentPortal\Server\StudentPortal\StudentPortal.Common\obj\Debug\netstandard2.0\StudentPortal.Common.AssemblyInfoInputs.cache
+C:\StudentPortal\Server\StudentPortal\StudentPortal.Common\obj\Debug\netstandard2.0\StudentPortal.Common.AssemblyInfo.cs
+C:\StudentPortal\Server\StudentPortal\StudentPortal.Common\obj\Debug\netstandard2.0\StudentPortal.Common.dll
+C:\StudentPortal\Server\StudentPortal\StudentPortal.Common\obj\Debug\netstandard2.0\StudentPortal.Common.pdb

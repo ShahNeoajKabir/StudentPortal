@@ -6,11 +6,6 @@ namespace StudentPortal.DTO.DTO
 {
    public class StudentRegistration
     {
-        public StudentRegistration()
-        {
-            Student = new Student();
-            Course = new Course();
-        }
         public int StudentRegistrationId { get; set; }
         public string StudentId { get; set; }
         public int CourseId { get; set; }

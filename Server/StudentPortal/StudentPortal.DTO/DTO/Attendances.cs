@@ -6,13 +6,7 @@ namespace StudentPortal.DTO.DTO
 {
     public class Attendances
     {
-        public Attendances()
-        {
-            Student = new Student();
-            Course = new Course();
-            Teacher = new Teacher();
 
-        }
         public int AttendanceId { get; set; }
         public int CourseId { get; set; }
         public int TeacherId { get; set; }

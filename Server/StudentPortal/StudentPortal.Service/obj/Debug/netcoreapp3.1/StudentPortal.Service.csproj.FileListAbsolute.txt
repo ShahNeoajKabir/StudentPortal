@@ -1,0 +1,4 @@
+C:\StudentPortal\Server\StudentPortal\StudentPortal.Service\obj\Debug\netcoreapp3.1\StudentPortal.Service.csprojAssemblyReference.cache
+C:\StudentPortal\Server\StudentPortal\StudentPortal.Service\obj\Debug\netcoreapp3.1\StudentPortal.Service.MvcApplicationPartsAssemblyInfo.cache
+C:\StudentPortal\Server\StudentPortal\StudentPortal.Service\obj\Debug\netcoreapp3.1\StudentPortal.Service.AssemblyInfoInputs.cache
+C:\StudentPortal\Server\StudentPortal\StudentPortal.Service\obj\Debug\netcoreapp3.1\StudentPortal.Service.AssemblyInfo.cs

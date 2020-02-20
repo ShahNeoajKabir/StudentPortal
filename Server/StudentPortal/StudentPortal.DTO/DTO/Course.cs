@@ -6,15 +6,6 @@ namespace StudentPortal.DTO.DTO
 {
     public class Course
     {
-        public Course()
-        {
-            CourseTeacherMapping = new HashSet<CourseTeacherMapping>();
-            StudentRegistration = new HashSet<StudentRegistration>();
-            Attendances = new HashSet<Attendances>(); 
-
-
-
-        }
         public int CourseId { get; set; }
         public string CourseCode { get; set; }
         public string CourseName { get; set; }

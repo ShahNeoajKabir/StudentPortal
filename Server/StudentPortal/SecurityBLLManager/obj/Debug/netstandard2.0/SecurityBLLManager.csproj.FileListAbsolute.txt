@@ -1,0 +1,15 @@
+C:\StudentPortal\Server\StudentPortal\SecurityBLLManager\bin\Debug\netstandard2.0\SecurityBLLManager.deps.json
+C:\StudentPortal\Server\StudentPortal\SecurityBLLManager\bin\Debug\netstandard2.0\SecurityBLLManager.dll
+C:\StudentPortal\Server\StudentPortal\SecurityBLLManager\bin\Debug\netstandard2.0\SecurityBLLManager.pdb
+C:\StudentPortal\Server\StudentPortal\SecurityBLLManager\bin\Debug\netstandard2.0\StudentPortal.Common.dll
+C:\StudentPortal\Server\StudentPortal\SecurityBLLManager\bin\Debug\netstandard2.0\StudentPortal.DAL.dll
+C:\StudentPortal\Server\StudentPortal\SecurityBLLManager\bin\Debug\netstandard2.0\StudentPortal.DTO.dll
+C:\StudentPortal\Server\StudentPortal\SecurityBLLManager\bin\Debug\netstandard2.0\StudentPortal.Common.pdb
+C:\StudentPortal\Server\StudentPortal\SecurityBLLManager\bin\Debug\netstandard2.0\StudentPortal.DAL.pdb
+C:\StudentPortal\Server\StudentPortal\SecurityBLLManager\bin\Debug\netstandard2.0\StudentPortal.DTO.pdb
+C:\StudentPortal\Server\StudentPortal\SecurityBLLManager\obj\Debug\netstandard2.0\SecurityBLLManager.csprojAssemblyReference.cache
+C:\StudentPortal\Server\StudentPortal\SecurityBLLManager\obj\Debug\netstandard2.0\SecurityBLLManager.AssemblyInfoInputs.cache
+C:\StudentPortal\Server\StudentPortal\SecurityBLLManager\obj\Debug\netstandard2.0\SecurityBLLManager.AssemblyInfo.cs
+C:\StudentPortal\Server\StudentPortal\SecurityBLLManager\obj\Debug\netstandard2.0\SecurityBLLManager.csproj.CopyComplete
+C:\StudentPortal\Server\StudentPortal\SecurityBLLManager\obj\Debug\netstandard2.0\SecurityBLLManager.dll
+C:\StudentPortal\Server\StudentPortal\SecurityBLLManager\obj\Debug\netstandard2.0\SecurityBLLManager.pdb

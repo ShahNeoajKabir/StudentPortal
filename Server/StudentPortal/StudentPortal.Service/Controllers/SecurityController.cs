@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Security.BLLManager;
 using SecurityBLLManager;
 using StudentPortal.DTO.DTO;
 using StudentPortal.DTO.ViewModel;
@@ -16,14 +18,11 @@ namespace StudentPortal.Service.Controllers
     {
         private readonly ISecurityBLLManager _securityBLLManager;
         private readonly IUserBLLManager _userBLLManager;
-        public SecurityController(IUserBLLManager userBLLManager)
+        public SecurityController(IUserBLLManager userBLLManager, ISecurityBLLManager securityBLLManager)
         {
             _userBLLManager = userBLLManager;
-
-        }
-        public SecurityController(ISecurityBLLManager securityBLLManager)
-        {
             _securityBLLManager = securityBLLManager;
+
         }
 
         [HttpPost("Login")]
@@ -87,5 +86,12 @@ namespace StudentPortal.Service.Controllers
         public void Delete(int id)
         {
         }
+
+        [HttpGet]
+        public string Gets()
+        {
+            return "value";
+        }
+
     }
 }
