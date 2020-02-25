@@ -1,0 +1,53 @@
+
+    <div class="main">
+        <div class="Header">
+            <div>
+                <button class="au-btn au-btn-icon au-btn--green au-btn--small"routerLink="/parents/new">
+                    <i class="zmdi zmdi-plus"></i>add Parents</button>
+        
+            </div>
+        <div>
+            <form class="form-header" action="" method="POST">
+                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for Information &amp; reports..." />
+                <button class="au-btn--submit" type="submit">
+                    <i class="zmdi zmdi-search"></i>
+                </button>
+            </form>
+        </div>
+        </div>
+        <div class="row m-t-30">
+            <div class="col-md-12">
+                <!-- DATA TABLE-->
+                <div class="table-responsive m-b-40">
+                    <table class="table table-borderless table-data3">
+                        <thead>
+                            <tr>
+                                <th>Student Id</th>
+                                <th>Parents Name</th>
+                                <th>Email Address</th>
+                                <th>Mobile Number</th>
+                                <th>Blood Group</th>
+                                <th>Address</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let objparents of lstparents">
+                                <td >{{objparents.StudentId}}</td>
+                                <td>{{objparents.ParentsName}}</td>
+                            <td>{{objparents.Email}}</td>
+                            <td>{{objparents.MobileNo}}</td>
+                           <td>{{objparents.BloodGroup}}</td>
+                           <td>{{objparents.Address}}</td>
+                            <td> <a routerLink="{{ objparents.ParentsId }}/edit">Edit</a></td>
+                            <td> <a routerLink="{{ objparents.ParentsId }}/edit">Delete</a></td>
+        
+                            </tr>
+                         
+                        </tbody>
+                    </table>
+                </div>
+                <!-- END DATA TABLE-->
+            </div>
+        </div>
+        </div>

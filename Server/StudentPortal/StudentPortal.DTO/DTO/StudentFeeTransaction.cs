@@ -7,7 +7,7 @@ namespace StudentPortal.DTO.DTO
    public class StudentFeeTransaction
     {
         public int StudentFeeTransactionId { get; set; }
-        public string StudentId { get; set; }
+        public int StudentId { get; set; }
         public int StudentRegistrationId { get; set; }
         public decimal DebitAmount { get; set; }
         public decimal CreditAmount { get; set; }

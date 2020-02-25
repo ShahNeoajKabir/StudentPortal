@@ -15,6 +15,7 @@ namespace Service.Portal.Controllers
     public class StudentController : ControllerBase
     {
         private readonly IStudentBLLManager studentBLLManager;
+
         public StudentController(IStudentBLLManager studentBLLManager)
         {
             this.studentBLLManager = studentBLLManager;
@@ -54,13 +55,38 @@ namespace Service.Portal.Controllers
 
 
         }
-        [HttpGet]
-        [Route("Gets")]
-
-        public string Gets()
+        [HttpPost]
+        [Route("UpdateStudent")]
+        public int UpdateStudent([FromBody]object objstudent)
         {
+            try
+            {
+                Student student = JsonConvert.DeserializeObject<Student>(objstudent.ToString());
+                this.studentBLLManager.UpdateStudent(student);
+                return 1;
 
-            return "hello";
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
+        }
+        [HttpPost]
+        [Route("GetById")]
+        public int GetById([FromBody]object objstudent)
+        {
+            try
+            {
+                Student student = JsonConvert.DeserializeObject<Student>(objstudent.ToString());
+                this.studentBLLManager.GetStudentId(student);
+                return 1;
+
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
+
         }
     }
 }

@@ -9,10 +9,10 @@ export class StudentService {
 
   constructor(private httpclient: HttpClient) { }
  public AddStudent(objstudent: any) {
-    return this.httpclient.post(ApiConstant.StudentApi.AddStudent ,objstudent);
+    return this.httpclient.post(ApiConstant.StudentApi.AddStudent , objstudent);
 
   }
- public GetAll() {
+ public GetAllStudent() {
   return this.httpclient.get(ApiConstant.StudentApi.GetAllStudent);
 
   }

@@ -8,20 +8,19 @@ import { User } from '../Model/User';
   styleUrls: ['./view-user.component.scss']
 })
 export class ViewUserComponent implements OnInit {
-    public lstuser: User[] = new Array<User>() 
+    public lstuser: User[] = new Array<User>();
   constructor(private userservice: UserService) { }
 
   ngOnInit() {
    this.userservice.GetAll().subscribe((res: any) => {
      this.lstuser = res;
-      console.log(this.lstuser);
-    })
+     console.log(this.lstuser);
+    });
 
   }
-  Edit(id){
+  Edit(id) {
 
     console.log(id);
-    
   }
 
 }

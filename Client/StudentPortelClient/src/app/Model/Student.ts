@@ -7,7 +7,7 @@ export class Student {
      Email: string;
      MobileNo: string;
      DateOfBirth: Date;
-     Gender: string;
+     Gender = -1;
      Religion: string;
      Nationality: string;
      BloodGroup: string;

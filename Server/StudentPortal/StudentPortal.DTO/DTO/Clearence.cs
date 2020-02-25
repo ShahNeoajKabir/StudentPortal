@@ -8,7 +8,7 @@ namespace StudentPortal.DTO.DTO
     {
         public int ClearenceId { get; set; }
         public int StudentPaymentId { get; set; }
-        public string StudentId { get; set; }
+        public int StudentId { get; set; }
         public short FeeType { get; set; }
         public bool ClearenceStatus { get; set; }
         public int StudentFeeTransactionId { get; set; }

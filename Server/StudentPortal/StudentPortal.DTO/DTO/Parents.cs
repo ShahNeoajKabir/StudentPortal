@@ -7,7 +7,7 @@ namespace StudentPortal.DTO.DTO
    public class Parents
     {
         public int ParentsId { get; set; }
-        public string StudentId { get; set; }
+        public int StudentId{ get; set; }
         public string ParentsName { get; set; }
         public string Email { get; set; }
         public string MobileNo { get; set; }
@@ -19,6 +19,7 @@ namespace StudentPortal.DTO.DTO
         public DateTime? UpdatedDate { get; set; }
         public int Status { get; set; }
         public string Image { get; set; }
+        public Student Student { get; set; }
 
     }
 }

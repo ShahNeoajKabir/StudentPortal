@@ -12,6 +12,12 @@ export class UserService {
   public AddUser(obj: any ) {
     return this.httpClient.post(ApiConstant.UserApi.AddUser, obj);
   }
+  public UpdateUser(obj: any ) {
+    return this.httpClient.post(ApiConstant.UserApi.UpdateUser, obj);
+  }
+  public GetUserByID(obj: any ) {
+    return this.httpClient.post(ApiConstant.UserApi.GetUserById, obj);
+  }
   public GetAll() {
     return this.httpClient.get(ApiConstant.UserApi.GetAllUser);
   }

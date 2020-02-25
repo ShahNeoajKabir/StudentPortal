@@ -27,8 +27,8 @@ namespace Service.Portal.Controllers
         {
             try
             {
-                User user =JsonConvert.DeserializeObject<User>(objuser.ToString());
-                 this.userBLLManager.AddUser(user);
+                User user = JsonConvert.DeserializeObject<User>(objuser.ToString());
+                this.userBLLManager.AddUser(user);
                 return 1;
             }
             catch (Exception ex)
@@ -37,7 +37,43 @@ namespace Service.Portal.Controllers
                 throw;
             }
 
-            
+
+        }
+        [HttpPost]
+        [Route("UpdateUser")]
+        public int UpdateUser([FromBody]object objuser)
+        {
+            try
+            {
+                User user = JsonConvert.DeserializeObject<User>(objuser.ToString());
+                this.userBLLManager.UpdateUser(user);
+                return 1;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+
+        }
+        [HttpPost]
+        [Route("GetbyID")]
+        public User GetbyID([FromBody]object objuser)
+        {
+            try
+            {
+                User user = JsonConvert.DeserializeObject<User>(objuser.ToString());
+                return this.userBLLManager.GetUserByID(user);
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+
         }
         [HttpGet]
         [Route("GetAll")]
@@ -55,7 +91,7 @@ namespace Service.Portal.Controllers
 
 
         }
-        
+
         [HttpGet]
         [Route("Gets")]
 

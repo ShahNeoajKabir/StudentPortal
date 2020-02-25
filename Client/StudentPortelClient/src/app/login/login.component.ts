@@ -12,18 +12,17 @@ export class LoginComponent implements OnInit {
 
   objLogin: VMLogin = new VMLogin();
 
-  constructor(private Securityservice: SecurityService,
-    private router: Router) { }
+  constructor(private Securityservice: SecurityService, private router: Router) { }
 
   ngOnInit() {
   }
 
   Login() {
-    console.log('Hello');
     this.Securityservice.AddAccount(this.objLogin).subscribe(res => {
 
-      if ( res == 1){
-        this.router.navigate(['/Dashbord'])
+      // tslint:disable-next-line:triple-equals
+      if ( res == 1) {
+        this.router.navigate(['/Dashbord']);
       }
       console.log(res);
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../Service/student.service';
 import { Student } from '../Model/Student';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-student',
@@ -8,15 +9,15 @@ import { Student } from '../Model/Student';
   styleUrls: ['./view-student.component.scss']
 })
 export class ViewStudentComponent implements OnInit {
-  public lststudent: Student[] = new Array<Student>(); 
-  constructor(private studentservice: StudentService) { }
+  public lststudent: Student[] = new Array<Student>() ;
+  constructor(private studentservice: StudentService , private router: Router) { }
 
   ngOnInit() {
-    this.studentservice.GetAll().subscribe((res: any) => {
+    this.studentservice.GetAllStudent().subscribe((res: any) => {
       this.lststudent = res;
-       console.log (this.lststudent);
+      console.log (this.lststudent);
 
-  })
-
+  });
 }
+
 }

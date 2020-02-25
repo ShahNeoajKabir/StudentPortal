@@ -44,9 +44,12 @@ namespace Service.Portal
                     .AllowAnyHeader());
             });
             services.AddScoped<ISecurityBLLManager, Security.BLLManager.SecurityBLLManager>();
-            services.AddScoped<IUserBLLManager, UserBLLManager>();
+            services.AddScoped<IUserBLLManager, UserBLLManager>(); 
             services.AddScoped<IStudentBLLManager, StudentBLLManager>();
-
+            services.AddScoped<IParentsBLLManager, ParentsBLLManager>();
+            services.AddScoped<ICourseBLLManager, CourseBLLManager>();
+            services.AddScoped<ITeacherBLLManager, TeacherBLLManager>();
+            services.AddScoped<ISemesterBLLManager, SemesterBLLManager>();
 
 
         }

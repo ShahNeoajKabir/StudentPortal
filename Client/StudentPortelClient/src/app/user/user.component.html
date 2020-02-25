@@ -1,3 +1,15 @@
+<div class="Main">
+  <div class="page-wrapper" style="height: 1000px;">
+    <div class="page-content--bge5">
+        <div class="container">
+            <div class="login-wrap">
+                <div class="login-content">
+                    <div class="login-logo">
+                        <a href="#">
+                            <img src="assets\images\icon\diuIcon.png" alt="DIU User">
+                        </a>
+                    </div>
+                    <div class="login-form">
 <form>
     <div class="form-group">
         <label>User Name</label>
@@ -11,10 +23,29 @@
         <label>Mobile Number</label>
         <input type="number" [(ngModel)]="objuser.MobileNo" name="Mobile" class="form-control"  autocomplete="off">
       </div>
+      <div class="form-group">
+        <label>User Type</label>
+        <select name="UserType" class="form-control"
+  [(ngModel)]="objuser.UserTypeId">
+<!-- <option [value]="-1">-Select-</option> -->
+<option *ngFor="let usertype of lstUserType"
+[value]="usertype.key">{{usertype.value}}</option>
+</select>
+      </div>
     <div class="form-group">
       <label>Password</label>
       <input type="password" [(ngModel)]="objuser.Password" name="Password" class="form-control" >
     </div>
+    <div class="form-group">
+      <label>Status</label>
+      <select name="Status" class="form-control"
+[(ngModel)]="objuser.Status">
+<!-- <option [value]="-1">-Select-</option> -->
+<option *ngFor="let status of lstStatus"
+[value]="status.key">{{status.value}}</option>
+</select>
+    </div>
     <button type="submit" (click)="AddUser()" class="btn btn-primary">Add User</button>
   </form> 
   
+</div>

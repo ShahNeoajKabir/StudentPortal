@@ -18,12 +18,11 @@ namespace SecurityBLLManager
         }
         public User AddUser(User user)
         {
-            user.CreatedBy = "Bappy";
+            user.CreatedBy = "Admin";
             user.CreatedDate = DateTime.Now;
-            user.UserTypeId = 1;
 
-            //user.Password = new EncryptionService().Encrypt(user.Password);
-           
+            user.Password = new EncryptionService().Encrypt(user.Password);
+
             _db.User.Add(user);
             _db.SaveChanges();
             return user;
@@ -31,29 +30,31 @@ namespace SecurityBLLManager
 
         public List<User> GetAll()
         {
-            List<User> user = _db.User.ToList();
+            List<User> user = _db.User.Where(p=>p.Status==(int)StudentPortal.Common.Enum.Enum.Status.Active).ToList();
             return user;
         }
 
         public User UpdateUser(User user)
         {
+            user.UpdatedBy = "Admin";
+            user.UpdatedDate = DateTime.Now;
+
             _db.User.Update(user);
-             _db.SaveChangesAsync();
+             _db.SaveChanges();
             return user;
         }
-        public async Task<User> DeleteUser(User user)
+        public User GetUserByID(User user)
         {
-            _db.User.Remove(user);
-            await _db.SaveChangesAsync();
-            return user;
+            return _db.User.Find(user.UserId); 
         }
     }
     public interface IUserBLLManager
     {
         User AddUser(User user);
         User UpdateUser(User user);
+        User GetUserByID(User user);
+
         List<User> GetAll();
-        Task<User> DeleteUser(User user);
 
 
 

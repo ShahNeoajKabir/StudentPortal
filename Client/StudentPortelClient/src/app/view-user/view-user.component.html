@@ -1,18 +1,52 @@
-<table>
-    <tr>
-        <th>User Name</th>
-        <th>Email Address</th>
-        <th>Mobile Number</th>
-        <th>Status</th>
-    </tr>
-    <tr *ngFor="let objuser of lstuser">
-        <td >{{objuser.UserName}}</td>
-        <td>{{objuser.Email}}</td>
-        <td>{{objuser.MobileNo}}</td>
-        <td>{{objuser.Status}}</td>
-        <td> <a routerLink="{{ objuser.UserId }}/edit"
-        >Edit
-        </a></td>
 
-    </tr>
-</table>
+<div class="main">
+    <div class="Header">
+        <div>
+            <button class="au-btn au-btn-icon au-btn--green au-btn--small" routerLink="/user/new">
+                <i class="zmdi zmdi-plus"></i>add User</button>
+    
+        </div>
+    <div>
+        <form class="form-header" action="" method="POST">
+            <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for Information &amp; reports..." />
+            <button class="au-btn--submit" type="submit">
+                <i class="zmdi zmdi-search"></i>
+            </button>
+        </form>
+    </div>
+    </div>
+    <div class="row m-t-30">
+        <div class="col-md-12">
+            <!-- DATA TABLE-->
+            <div class="table-responsive m-b-40">
+                <table class="table table-borderless table-data3">
+                    <thead>
+                        <tr>
+                            <th>User Name</th>
+                         <th>Email Address</th>
+                        <th>Mobile Number</th>
+                        <th>User Type</th>
+                         <th>Status</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let objuser of lstuser">
+                            <td >{{objuser.UserName}}</td>
+                            <td>{{objuser.Email}}</td>
+                            <td>{{objuser.MobileNo}}</td>
+                            <td>{{objuser.UserTypeId}}</td>
+                            <td>{{objuser.Status}}</td>
+                            <td> <a routerLink="../{{ objuser.UserId }}/edit"
+                            >Edit
+                            </a></td>
+                    
+                        </tr>
+                     
+                    </tbody>
+                </table>
+            </div>
+            <!-- END DATA TABLE-->
+        </div>
+    </div>
+    </div>

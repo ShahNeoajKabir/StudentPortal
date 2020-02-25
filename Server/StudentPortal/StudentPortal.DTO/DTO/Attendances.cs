@@ -10,7 +10,7 @@ namespace StudentPortal.DTO.DTO
         public int AttendanceId { get; set; }
         public int CourseId { get; set; }
         public int TeacherId { get; set; }
-        public string StudentId { get; set; }
+        public int StudentId { get; set; }
 
         public bool Attendance { get; set; }
         public DateTime AttendanceDate { get; set; }
