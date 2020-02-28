@@ -14,6 +14,11 @@ using StudentPortal.DAL;
 using Microsoft.EntityFrameworkCore;
 using SecurityBLLManager;
 using Newtonsoft.Json.Serialization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using StudentPortal.DTO.ViewModel;
+using System.Text;
+
 namespace Service.Portal
 {
     public class Startup
@@ -36,6 +41,30 @@ namespace Service.Portal
                     });
             services.AddControllers();
             services.AddDbContext<StudentPortalDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Connection")), ServiceLifetime.Transient);
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = Configuration["JwtTokenSetting:Issuer"],
+                    ValidAudience = Configuration["JwtTokenSetting:Issuer"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtTokenSetting:Key"]))
+                };
+            });
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", null);
+                //var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+                //var xmlPath = Path.Combine(basePath, "SwaggerProject.xml");
+                //c.IncludeXmlComments(xmlPath);
+            });
+
+
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
@@ -43,6 +72,7 @@ namespace Service.Portal
                     .AllowAnyMethod()
                     .AllowAnyHeader());
             });
+            services.Configure<JwtTokenSetting>(Configuration.GetSection("JwtTokenSetting"));
             services.AddScoped<ISecurityBLLManager, Security.BLLManager.SecurityBLLManager>();
             services.AddScoped<IUserBLLManager, UserBLLManager>(); 
             services.AddScoped<IStudentBLLManager, StudentBLLManager>();
@@ -65,7 +95,12 @@ namespace Service.Portal
             app.UseRouting();
             app.UseCors("CorsPolicy");
             app.UseAuthorization();
+            app.UseSwagger();
 
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

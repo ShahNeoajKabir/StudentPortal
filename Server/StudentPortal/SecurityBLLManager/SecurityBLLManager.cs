@@ -21,7 +21,7 @@ namespace Security.BLLManager
             User objuser = new User();
             try
             {
-                //vMLogin.Password = new EncryptionService().Encrypt(vMLogin.Password);
+                vMLogin.Password = new EncryptionService().Encrypt(vMLogin.Password);
                 objuser =  _studentPortalDbContext.User.Where(p => p.UserName == vMLogin.UserName && p.Password == vMLogin.Password).Select(u=> new User() { 
                 UserTypeId=u.UserTypeId,
                 UserName=u.UserName,

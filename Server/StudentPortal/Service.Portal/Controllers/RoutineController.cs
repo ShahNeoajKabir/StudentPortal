@@ -70,13 +70,13 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("GetById")]
-        public int GetById([FromBody]object objroutine)
+        public Routine GetById([FromBody]object objroutine)
         {
             try
             {
                 Routine routine = JsonConvert.DeserializeObject<Routine>(objroutine.ToString());
-                this.routineBLLManager.GetRoutineById(routine);
-                return 1;
+                return this.routineBLLManager.GetRoutineById(routine);
+                
 
             }
             catch(Exception ex)

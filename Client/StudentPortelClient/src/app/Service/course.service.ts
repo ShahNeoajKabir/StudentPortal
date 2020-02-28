@@ -15,5 +15,11 @@ export class CourseService {
   public GetAll() {
     return this.httpclient.get(ApiConstant.CourseApi.GetAllCourse);
   }
+  public UpdateCourse(objcourse: any) {
+    return this.httpclient.post(ApiConstant.CourseApi.UpdateCourse, objcourse);
+  }
+  public GetCourseById(objcourse: any) {
+    return this.httpclient.post(ApiConstant.CourseApi.GetCourseById, objcourse);
+  }
 
 }

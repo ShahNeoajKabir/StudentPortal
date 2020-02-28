@@ -16,6 +16,8 @@ import { CourseComponent } from './course/course.component';
 import { ViewCourseComponent } from './view-course/view-course.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { ViewTeacherComponent } from './view-teacher/view-teacher.component';
+import { SemesterComponent } from './semester/semester.component';
+import { ViewSemesterComponent } from './view-semester/view-semester.component';
 
 
 
@@ -34,7 +36,9 @@ import { ViewTeacherComponent } from './view-teacher/view-teacher.component';
     CourseComponent,
     ViewCourseComponent,
     TeacherComponent,
-    ViewTeacherComponent
+    ViewTeacherComponent,
+    SemesterComponent,
+    ViewSemesterComponent
   ],
   imports: [
     BrowserModule,

@@ -270,6 +270,7 @@ namespace StudentPortal.DAL
             modelBuilder.Entity<User>(entity =>
             {
                 entity.HasKey(e => e.UserId);
+                entity.Ignore(e => e.UserTypeName);
                 
                 //entity.Property(e => e.CreatedDate);
 

@@ -14,6 +14,11 @@ export class StudentService {
   }
  public GetAllStudent() {
   return this.httpclient.get(ApiConstant.StudentApi.GetAllStudent);
-
+  }
+  public UpdateStudent(objstudent: any) {
+    return this.httpclient.post(ApiConstant.StudentApi.UpdateStudent, objstudent);
+  }
+  public GetStudentById(objstudent: any) {
+    return this.httpclient.post(ApiConstant.StudentApi.GetStudentById, objstudent);
   }
 }

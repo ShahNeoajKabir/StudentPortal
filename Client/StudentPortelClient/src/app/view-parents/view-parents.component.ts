@@ -19,5 +19,9 @@ export class ViewParentsComponent implements OnInit {
   });
 
 }
+Edit(id) {
+
+  console.log(id);
+}
 }
 

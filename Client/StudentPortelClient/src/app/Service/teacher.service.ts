@@ -15,4 +15,11 @@ export class TeacherService {
   public GetAllTeacher() {
    return this.httpclient.get(ApiConstant.TeacherApi.GetAllTeacher);
   }
+  public UpdateTeacher(objteacher: any) {
+    return this.httpclient.post(ApiConstant.TeacherApi.UpdateTeacher , objteacher);
+  }
+  public GetTeacherById(objteacher: any) {
+    return this.httpclient.post(ApiConstant.TeacherApi.GetTeacherById , objteacher);
+
+  }
 }

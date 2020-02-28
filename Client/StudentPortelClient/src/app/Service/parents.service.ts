@@ -15,4 +15,10 @@ export class ParentsService {
   public GetAllParents() {
     return this.httpclient.get(ApiConstant.ParentsApi.GetAllParents);
     }
+    public UpdateParents(objparentrs: any) {
+      return this.httpclient.post(ApiConstant.ParentsApi.UpdateParents, objparentrs);
+    }
+    public GetParentsById(objparentrs: any) {
+      return this.httpclient.post(ApiConstant.ParentsApi.GetParentsById, objparentrs);
+    }
 }

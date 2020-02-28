@@ -37,7 +37,7 @@
                         
                     </tr>
                 </thead>
-                <tbody>
+                <tbody style="text-align: center;">
                     <tr *ngFor="let objstudent of lststudent">
                         <td >{{objstudent.StudentName}}</td>
                         <td>{{objstudent.StudentRule}}</td>
@@ -50,8 +50,7 @@
                    <td>{{objstudent.BloodGroup}}</td> 
                    <td>{{objstudent.Batch}}</td> 
                    <td>{{objstudent.Address}}</td> 
-                    <td> <a routerLink="{{ objstudent.StudentId }}/edit">Edit</a></td>
-                    <td> <a routerLink="{{ objstudent.StudentId }}/edit">Delete</a></td>
+                    <td> <a routerLink="../{{ objstudent.StudentId }}/edit">Edit</a></td>
 
                     </tr>
                  

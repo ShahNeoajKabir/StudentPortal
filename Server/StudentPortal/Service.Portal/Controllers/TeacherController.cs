@@ -55,13 +55,13 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("GetById")]
-        public int GetById([FromBody]object objteacher)
+        public Teacher GetById([FromBody]object objteacher)
         {
             try
             {
                 Teacher teacher = JsonConvert.DeserializeObject<Teacher>(objteacher.ToString());
-                this.teacherBLLManager.GetTeacherById(teacher);
-                return 1;
+                return this.teacherBLLManager.GetTeacherById(teacher);
+               
 
             }
             catch(Exception ex)

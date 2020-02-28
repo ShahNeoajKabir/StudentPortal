@@ -29,15 +29,15 @@ export class UserComponent implements OnInit {
     this.lstUserType = this.utility.enumToArray(UserType);
     this.lstStatus = this.utility.enumToArray(Status);
 
-    if (this.activateRoute.snapshot.params[' id'] !== undefined) {
+    if (this.activateRoute.snapshot.params['id'] !== undefined) {
 
-      this.objuseredit.UserId = this.activateRoute.snapshot.params[' id' ];
+      this.objuseredit.UserId = this.activateRoute.snapshot.params['id' ];
       this.Userservice.GetUserByID(this.objuseredit).subscribe(( res: any) => {
 
         this.objuser = res;
         console.log(this.objuser);
      });
-      console.log(this.activateRoute.snapshot.params[' id' ] );
+      console.log(this.activateRoute.snapshot.params['id' ] );
 
     }
   }

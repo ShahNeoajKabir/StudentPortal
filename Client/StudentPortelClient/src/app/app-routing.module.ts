@@ -13,31 +13,31 @@ import { ViewCourseComponent } from './view-course/view-course.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { ViewTeacherComponent } from './view-teacher/view-teacher.component';
 import { AppComponent } from './app.component';
-
+import { SemesterComponent } from './semester/semester.component';
+import { ViewSemesterComponent } from './view-semester/view-semester.component';
+import { AuthGuard } from '../app/Service/auth/auth.guard';
 
 
 
 const routes: Routes = [
-  {path: 'Dashbord' , component: DashbordComponent},
+  {path: 'Dashbord' , component: DashbordComponent, canActivate: [AuthGuard]},
   {path: 'Login' , component: LoginComponent},
   {
     path: 'user',
     component: AppComponent,
     children: [
-        { path: ':id/edit', component: UserComponent },
-        { path: 'new', component: UserComponent },
-        { path: 'View', component: ViewUserComponent }
-
-
+        { path: ':id/edit', component: UserComponent, canActivate: [AuthGuard] },
+        { path: 'new', component: UserComponent, canActivate: [AuthGuard] },
+        { path: 'View', component: ViewUserComponent, canActivate: [AuthGuard] }
     ]
 },
 {
   path: 'student',
   component: AppComponent,
   children: [
-      { path: ':id/edit', component: StudentComponent },
-      { path: 'new', component: StudentComponent },
-      { path: 'View', component: ViewStudentComponent }
+      { path: ':id/edit', component: StudentComponent, canActivate: [AuthGuard] },
+      { path: 'new', component: StudentComponent, canActivate: [AuthGuard] },
+      { path: 'View', component: ViewStudentComponent, canActivate: [AuthGuard] }
 
 
   ]
@@ -46,9 +46,9 @@ const routes: Routes = [
   path: 'parents',
   component: AppComponent,
   children: [
-      { path: ':id/edit', component: ParentsComponent },
-      { path: 'new', component: ParentsComponent },
-      { path: 'View', component: ViewParentsComponent }
+      { path: ':id/edit', component: ParentsComponent, canActivate: [AuthGuard] },
+      { path: 'new', component: ParentsComponent, canActivate: [AuthGuard] },
+      { path: 'View', component: ViewParentsComponent, canActivate: [AuthGuard] }
 
 
   ]
@@ -57,9 +57,9 @@ const routes: Routes = [
   path: 'teacher',
   component: AppComponent,
   children: [
-      { path: ':id/edit', component: TeacherComponent },
-      { path: 'new', component: TeacherComponent },
-      { path: 'View', component: ViewTeacherComponent }
+      { path: ':id/edit', component: TeacherComponent, canActivate: [AuthGuard] },
+      { path: 'new', component: TeacherComponent, canActivate: [AuthGuard] },
+      { path: 'View', component: ViewTeacherComponent, canActivate: [AuthGuard] }
 
 
   ]
@@ -68,15 +68,26 @@ const routes: Routes = [
   path: 'course',
   component: AppComponent,
   children: [
-      { path: ':id/edit', component: CourseComponent },
-      { path: 'new', component: CourseComponent },
-      { path: 'View', component: ViewCourseComponent }
+      { path: ':id/edit', component: CourseComponent, canActivate: [AuthGuard] },
+      { path: 'new', component: CourseComponent, canActivate: [AuthGuard] },
+      { path: 'View', component: ViewCourseComponent, canActivate: [AuthGuard] }
+
+
+  ]
+},
+{
+  path: 'semester',
+  component: AppComponent,
+  children: [
+      { path: ':id/edit', component: SemesterComponent, canActivate: [AuthGuard] },
+      { path: 'new', component: SemesterComponent, canActivate: [AuthGuard] },
+      { path: 'View', component: ViewSemesterComponent, canActivate: [AuthGuard] }
 
 
   ]
 },
 
-
+{ path: '', redirectTo: 'Login', pathMatch: 'full' }
 
 ];
 

@@ -20,5 +20,9 @@ export class ViewCourseComponent implements OnInit {
 
   });
   }
+  Edit(id) {
+
+    console.log(id);
+  }
 
 }

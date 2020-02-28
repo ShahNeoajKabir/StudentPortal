@@ -70,13 +70,13 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("GetById")]
-        public int GetById([FromBody]object objsemester)
+        public Semester GetById([FromBody]object objsemester)
         {
             try
             {
                 Semester semester = JsonConvert.DeserializeObject<Semester>(objsemester.ToString());
-                this.semesterBLLManager.GetSemesterById(semester);
-                return 1;
+                return this.semesterBLLManager.GetSemesterById(semester);
+                 
 
             }
             catch(Exception ex)

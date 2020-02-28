@@ -19,5 +19,9 @@ export class ViewTeacherComponent implements OnInit {
       console.log(this.lstteacher);
     });
   }
+  Edit(id) {
+
+    console.log(id);
+  }
 
 }

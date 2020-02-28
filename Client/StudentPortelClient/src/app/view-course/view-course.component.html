@@ -29,13 +29,13 @@
                             
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody  style="text-align: center;">
                         <tr *ngFor="let objcourse of lstcourse">
                             <td >{{objcourse.CourseCode}}</td>
                             <td>{{objcourse.CourseName}}</td>
                             <td>{{objcourse.CourseCredit}}</td>
                             <td>{{objcourse.CourseFee}}</td>
-                            <td> <a routerLink="{{ objcourse.UserId }}/edit"
+                            <td> <a routerLink="../{{ objcourse.CourseId }}/edit"
                             >Edit
                             </a></td>
                     
