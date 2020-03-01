@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SecurityBLLManager;
 using StudentPortal.DTO.DTO;
+using StudentPortal.DTO.ViewModel;
 
 namespace Service.Portal.Controllers
 {
@@ -21,11 +22,11 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("AddCourse")]
-        public int AddCourse([FromBody]object objCourse)
+        public int AddCourse([FromBody]TempMessage message)
         {
             try
             {
-                Course course= JsonConvert.DeserializeObject<Course>(objCourse.ToString());
+                Course course= JsonConvert.DeserializeObject<Course>(message.Content.ToString());
                 this.courseBLLManager.AddCourse(course);
                 return 1;
 
@@ -53,11 +54,11 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("UpdateCourse")]
-        public int UpdateCourse([FromBody]object objcourse)
+        public int UpdateCourse([FromBody]TempMessage message)
         {
             try
             {
-                Course course = JsonConvert.DeserializeObject<Course>(objcourse.ToString());
+                Course course = JsonConvert.DeserializeObject<Course>(message.Content.ToString());
                 this.courseBLLManager.GetCourseById(course);
                 return 1;
             }
@@ -68,11 +69,11 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("GetById")]
-        public Course GetById([FromBody]object objcourse)
+        public Course GetById([FromBody]TempMessage message )
         {
             try
             {
-                Course course = JsonConvert.DeserializeObject<Course>(objcourse.ToString());
+                Course course = JsonConvert.DeserializeObject<Course>(message.Content.ToString());
                 return this.courseBLLManager.GetCourseById(course);
                  
 

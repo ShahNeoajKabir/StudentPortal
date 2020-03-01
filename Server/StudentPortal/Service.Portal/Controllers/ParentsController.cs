@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SecurityBLLManager;
 using StudentPortal.DTO.DTO;
+using StudentPortal.DTO.ViewModel;
 
 namespace Service.Portal.Controllers
 {
@@ -21,11 +22,11 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("AddParents")]
-        public int AddParent([FromBody]object objparents)
+        public int AddParent([FromBody]TempMessage message)
         {
             try
             {
-                Parents parents = JsonConvert.DeserializeObject<Parents>(objparents.ToString());
+                Parents parents = JsonConvert.DeserializeObject<Parents>(message.Content.ToString());
                 this.parentsBLLManager.AddParents(parents);
                 return 1;
             }
@@ -55,11 +56,11 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("UpdateParents")]
-        public int UpdateParents([FromBody]object objparents)
+        public int UpdateParents([FromBody]TempMessage message)
         {
             try
             {
-                Parents parents = JsonConvert.DeserializeObject<Parents>(objparents.ToString());
+                Parents parents = JsonConvert.DeserializeObject<Parents>(message.Content.ToString());
                 this.parentsBLLManager.UpdateParents(parents);
                 return 1;
 
@@ -72,11 +73,11 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("GetById")]
-        public Parents GetById([FromBody]object objparents)
+        public Parents GetById([FromBody]TempMessage message)
         {
             try
             {
-                Parents parents = JsonConvert.DeserializeObject<Parents>(objparents.ToString());
+                Parents parents = JsonConvert.DeserializeObject<Parents>(message.Content.ToString());
                 return this.parentsBLLManager.GetParentsById(parents);
                 
             }

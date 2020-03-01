@@ -47,6 +47,7 @@ export class UserComponent implements OnInit {
     if (this.objuser.UserId > 0 ) {
       this.Userservice.UpdateUser(this.objuser).subscribe(res => {
         if (res === 1) {
+          this.router.navigate(['/user/View']);
           console.log(res);
         }
         console.log(res);
@@ -54,6 +55,7 @@ export class UserComponent implements OnInit {
     } else {
       this.Userservice.AddUser(this.objuser).subscribe(res => {
         if (res === 1) {
+          this.router.navigate(['/user/View']);
           console.log(res);
         }
         console.log(res);

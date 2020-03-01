@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SecurityBLLManager;
 using StudentPortal.DTO.DTO;
+using StudentPortal.DTO.ViewModel;
 
 namespace Service.Portal.Controllers
 {
@@ -22,11 +23,11 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("AddRoutine")]
-        public int AddRoutine([FromBody]object objuser)
+        public int AddRoutine([FromBody]TempMessage message)
         {
             try
             {
-                Routine routine = JsonConvert.DeserializeObject<Routine>(objuser.ToString());
+                Routine routine = JsonConvert.DeserializeObject<Routine>(message.Content.ToString());
                 this.routineBLLManager.AddRoutine(routine);
                 return 1;
             }
@@ -54,11 +55,11 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("UpdateRoutine")]
-        public int UpdateRoutine([FromBody]object objroutine)
+        public int UpdateRoutine([FromBody]TempMessage message)
         {
             try
             {
-                Routine routine = JsonConvert.DeserializeObject<Routine>(objroutine.ToString());
+                Routine routine = JsonConvert.DeserializeObject<Routine>(message.Content.ToString());
                 this.routineBLLManager.UpdateRoutine(routine);
                 return 1;
 
@@ -70,11 +71,11 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("GetById")]
-        public Routine GetById([FromBody]object objroutine)
+        public Routine GetById([FromBody]TempMessage message)
         {
             try
             {
-                Routine routine = JsonConvert.DeserializeObject<Routine>(objroutine.ToString());
+                Routine routine = JsonConvert.DeserializeObject<Routine>(message.Content.ToString());
                 return this.routineBLLManager.GetRoutineById(routine);
                 
 

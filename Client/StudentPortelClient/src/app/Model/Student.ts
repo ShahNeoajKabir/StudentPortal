@@ -18,6 +18,7 @@ export class Student {
      UpdatedBy: string;
      UpdatedDate: Date;
      Status: number;
+     Image: string;
 
 
 }

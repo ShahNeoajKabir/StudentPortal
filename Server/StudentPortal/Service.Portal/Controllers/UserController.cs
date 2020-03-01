@@ -8,6 +8,7 @@ using SecurityBLLManager;
 using StudentPortal.DTO.DTO;
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
+using StudentPortal.DTO.ViewModel;
 
 namespace Service.Portal.Controllers
 {
@@ -23,11 +24,12 @@ namespace Service.Portal.Controllers
 
         [HttpPost]
         [Route("AddUser")]
-        public int AddUser([FromBody]object objuser)
+        public int AddUser([FromBody]TempMessage message)
         {
             try
             {
-                User user = JsonConvert.DeserializeObject<User>(objuser.ToString());
+
+                User user = JsonConvert.DeserializeObject<User>(message.Content.ToString());
                 this.userBLLManager.AddUser(user);
                 return 1;
             }
@@ -41,11 +43,11 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("UpdateUser")]
-        public int UpdateUser([FromBody]object objuser)
+        public int UpdateUser([FromBody]TempMessage message)
         {
             try
             {
-                User user = JsonConvert.DeserializeObject<User>(objuser.ToString());
+                User user = JsonConvert.DeserializeObject<User>(message.Content.ToString());
                 this.userBLLManager.UpdateUser(user);
                 return 1;
             }
@@ -59,11 +61,11 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("GetbyID")]
-        public User GetbyID([FromBody]object objuser)
+        public User GetbyID([FromBody]TempMessage message)
         {
             try
             {
-                User user = JsonConvert.DeserializeObject<User>(objuser.ToString());
+                User user = JsonConvert.DeserializeObject<User>(message.Content.ToString());
                 return this.userBLLManager.GetUserByID(user);
                 
             }

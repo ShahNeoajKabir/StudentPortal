@@ -35,7 +35,8 @@ export class SemesterComponent implements OnInit {
    AddSemester() {
      if (this.objsemester.SemesterId > 0) {
        this.semesterservice.UpdateSemester(this.objsemester).subscribe(res => {
-         if (res === 1) {
+        this.router.navigate(['/semester/View']);
+        if (res === 1) {
            console.log(res);
 
          }
@@ -44,7 +45,8 @@ export class SemesterComponent implements OnInit {
 
      } else {
        this.semesterservice.AddSemester(this.objsemester).subscribe(res => {
-         if ( res === 1) {
+        this.router.navigate(['/semester/View']);
+        if ( res === 1) {
            console.log(res);
 
          }

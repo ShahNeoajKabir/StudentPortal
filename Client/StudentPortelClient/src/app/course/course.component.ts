@@ -37,6 +37,8 @@ export class CourseComponent implements OnInit {
     console.log(this.objcourse);
     if (this.objcourse.CourseId > 0) {
       this.courseservice.UpdateCourse(this.objcourse).subscribe(res => {
+        this.router.navigate(['/course/View']);
+
         if ( res === 1) {
           console.log(res);
 
@@ -45,6 +47,8 @@ export class CourseComponent implements OnInit {
       });
     } else {
       this.courseservice.AddCourse(this.objcourse).subscribe(res => {
+        this.router.navigate(['/course/View']);
+
         if ( res === 1 ) {
           console.log(res);
 

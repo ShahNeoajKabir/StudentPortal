@@ -12,10 +12,10 @@ export class AuthInterceptorService {
    if (this.token.GetToken() !== null) {
        authToken = this.token.GetToken();
     }
-      const authReq = req.clone 
+   const authReq = req.clone
       ({
       headers: req.headers.set('Authorization', authToken)
     });
-    return next.handle(authReq);
+   return next.handle(authReq);
   }
 }

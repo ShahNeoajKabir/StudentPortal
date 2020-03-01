@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SecurityBLLManager;
 using StudentPortal.DTO.DTO;
+using StudentPortal.DTO.ViewModel;
 
 namespace Service.Portal.Controllers
 {
@@ -23,11 +24,12 @@ namespace Service.Portal.Controllers
 
         [HttpPost]
         [Route("AddTeacher")]
-        public int AddTeacher([FromBody]object objteacher)
+        public int AddTeacher([FromBody]TempMessage message)
         {
             try
             {
-                Teacher teacher= JsonConvert.DeserializeObject<Teacher>(objteacher.ToString());
+                Teacher teacher= JsonConvert.DeserializeObject<Teacher>(message.Content.ToString());
+                teacher.CreatedBy = message.UserId;
                 this.teacherBLLManager.AddTeacher(teacher);
                 return 1;
 
@@ -39,11 +41,11 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("UpdateTeacher")]
-        public int UpdateTeacher([FromBody]object objteacher)
+        public int UpdateTeacher([FromBody]TempMessage message)
         {
             try
             {
-                Teacher teacher = JsonConvert.DeserializeObject<Teacher>(objteacher.ToString());
+                Teacher teacher = JsonConvert.DeserializeObject<Teacher>(message.Content.ToString());
                 this.teacherBLLManager.UpdateTeacher(teacher);
                 return 1;
 
@@ -55,11 +57,11 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("GetById")]
-        public Teacher GetById([FromBody]object objteacher)
+        public Teacher GetById([FromBody]TempMessage message)
         {
             try
             {
-                Teacher teacher = JsonConvert.DeserializeObject<Teacher>(objteacher.ToString());
+                Teacher teacher = JsonConvert.DeserializeObject<Teacher>(message.Content.ToString());
                 return this.teacherBLLManager.GetTeacherById(teacher);
                
 

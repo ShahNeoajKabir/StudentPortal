@@ -35,6 +35,8 @@ export class TeacherComponent implements OnInit {
     console.log(this.objteacher);
     if (this.objteacher.TeacherId > 0) {
       this.teacherservice.UpdateTeacher(this.objteacher).subscribe( res => {
+        this.router.navigate(['/student/View']);
+
         if ( res === 1 ) {
           console.log(res);
 
@@ -44,6 +46,8 @@ export class TeacherComponent implements OnInit {
     } else {
       this.teacherservice.AddTeacher(this.objteacher).subscribe(res => {
         if ( res === 1 ) {
+          this.router.navigate(['/student/View']);
+
           console.log(res);
 
         }

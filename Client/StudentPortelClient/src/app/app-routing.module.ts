@@ -16,15 +16,15 @@ import { AppComponent } from './app.component';
 import { SemesterComponent } from './semester/semester.component';
 import { ViewSemesterComponent } from './view-semester/view-semester.component';
 import { AuthGuard } from '../app/Service/auth/auth.guard';
+import { LayoutComponent } from './layout/layout.component';
 
 
 
 const routes: Routes = [
-  {path: 'Dashbord' , component: DashbordComponent, canActivate: [AuthGuard]},
   {path: 'Login' , component: LoginComponent},
   {
     path: 'user',
-    component: AppComponent,
+    component: LayoutComponent,
     children: [
         { path: ':id/edit', component: UserComponent, canActivate: [AuthGuard] },
         { path: 'new', component: UserComponent, canActivate: [AuthGuard] },
@@ -32,8 +32,18 @@ const routes: Routes = [
     ]
 },
 {
+  path: 'Dashbord',
+  component: LayoutComponent,
+  children: [
+
+      { path: '', component: DashbordComponent, canActivate: [AuthGuard] }
+
+
+  ]
+},
+{
   path: 'student',
-  component: AppComponent,
+  component: LayoutComponent,
   children: [
       { path: ':id/edit', component: StudentComponent, canActivate: [AuthGuard] },
       { path: 'new', component: StudentComponent, canActivate: [AuthGuard] },
@@ -44,7 +54,7 @@ const routes: Routes = [
 },
 {
   path: 'parents',
-  component: AppComponent,
+  component: LayoutComponent,
   children: [
       { path: ':id/edit', component: ParentsComponent, canActivate: [AuthGuard] },
       { path: 'new', component: ParentsComponent, canActivate: [AuthGuard] },
@@ -55,7 +65,7 @@ const routes: Routes = [
 },
 {
   path: 'teacher',
-  component: AppComponent,
+  component: LayoutComponent,
   children: [
       { path: ':id/edit', component: TeacherComponent, canActivate: [AuthGuard] },
       { path: 'new', component: TeacherComponent, canActivate: [AuthGuard] },
@@ -66,7 +76,7 @@ const routes: Routes = [
 },
 {
   path: 'course',
-  component: AppComponent,
+  component: LayoutComponent,
   children: [
       { path: ':id/edit', component: CourseComponent, canActivate: [AuthGuard] },
       { path: 'new', component: CourseComponent, canActivate: [AuthGuard] },
@@ -77,7 +87,7 @@ const routes: Routes = [
 },
 {
   path: 'semester',
-  component: AppComponent,
+  component: LayoutComponent,
   children: [
       { path: ':id/edit', component: SemesterComponent, canActivate: [AuthGuard] },
       { path: 'new', component: SemesterComponent, canActivate: [AuthGuard] },

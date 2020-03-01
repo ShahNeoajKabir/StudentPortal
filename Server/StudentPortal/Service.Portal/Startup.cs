@@ -18,6 +18,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using StudentPortal.DTO.ViewModel;
 using System.Text;
+using Service.Portal.Handler;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace Service.Portal
 {
@@ -40,6 +42,7 @@ namespace Service.Portal
                         options.SerializerSettings.ContractResolver = new DefaultContractResolver();
                     });
             services.AddControllers();
+
             services.AddDbContext<StudentPortalDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Connection")), ServiceLifetime.Transient);
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>
@@ -72,9 +75,11 @@ namespace Service.Portal
                     .AllowAnyMethod()
                     .AllowAnyHeader());
             });
-            services.Configure<JwtTokenSetting>(Configuration.GetSection("JwtTokenSetting"));
+            services.Configure<JwtTokenSetting>(Configuration.GetSection("JwtTokenSetting")); 
             services.AddScoped<ISecurityBLLManager, Security.BLLManager.SecurityBLLManager>();
-            services.AddScoped<IUserBLLManager, UserBLLManager>(); 
+            services.AddScoped<IUserBLLManager, UserBLLManager>();
+            services.AddScoped<IAuthenticationManager, AuthenticationManager>();
+
             services.AddScoped<IStudentBLLManager, StudentBLLManager>();
             services.AddScoped<IParentsBLLManager, ParentsBLLManager>();
             services.AddScoped<ICourseBLLManager, CourseBLLManager>();
@@ -94,6 +99,12 @@ namespace Service.Portal
 
             app.UseRouting();
             app.UseCors("CorsPolicy");
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
+
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseSwagger();
 

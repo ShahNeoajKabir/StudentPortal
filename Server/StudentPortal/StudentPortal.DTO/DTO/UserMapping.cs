@@ -9,7 +9,7 @@ namespace StudentPortal.DTO.DTO
         public int UserMappingId { get; set; }
         public int UserId { get; set; }
         public int UserTypeId { get; set; }
-        public string IdentityId { get; set; }
+        public int IdentityId { get; set; }
         public string CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; }
         public string UpdatedBy { get; set; }

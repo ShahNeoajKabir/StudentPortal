@@ -6,7 +6,7 @@ import { ParentsService } from '../Service/parents.service';
 import { Status } from '../Common/Enum';
 import { Utility } from '../Common/Utility';
 import { StudentService } from '../Service/student.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-parents',
@@ -22,7 +22,7 @@ export class ParentsComponent implements OnInit {
   public lstStudent: any;
 
   constructor(private parentsservice: ParentsService , private utility: Utility, private studentservice: StudentService,
-              private activateRoter: ActivatedRoute) { }
+              private activateRoter: ActivatedRoute , private router: Router) { }
 
   ngOnInit() {
     this.lstStatus = this.utility.enumToArray(Status);
@@ -47,6 +47,8 @@ export class ParentsComponent implements OnInit {
     if ( this.objparents.ParentsId > 0) {
       this.parentsservice.UpdateParents(this.objparents).subscribe(res => {
         if ( res === 1) {
+        this.router.navigate(['/parents/View']);
+
           console.log(res);
 
         }
@@ -54,6 +56,8 @@ export class ParentsComponent implements OnInit {
       });
     } else {
       this.parentsservice.AddParents(this.objparents).subscribe(res => {
+        this.router.navigate(['/parents/View']);
+
         if ( res === 1) {
           console.log(res);
         }

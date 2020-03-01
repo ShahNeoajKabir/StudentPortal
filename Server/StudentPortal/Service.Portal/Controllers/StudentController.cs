@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SecurityBLLManager;
 using StudentPortal.DTO.DTO;
+using StudentPortal.DTO.ViewModel;
 
 namespace Service.Portal.Controllers
 {
@@ -23,11 +24,12 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("AddStudent")]
-        public int AddStudent([FromBody]object objstudent)
+        public int AddStudent([FromBody]TempMessage message)
         {
             try
             {
-                Student student = JsonConvert.DeserializeObject<Student>(objstudent.ToString());
+                Student student = JsonConvert.DeserializeObject<Student>(message.Content.ToString());
+                student.CreatedBy = message.UserId;
                 this.studentBLLManager.AddStudent(student);
                 return 1;
             }
@@ -57,11 +59,11 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("UpdateStudent")]
-        public int UpdateStudent([FromBody]object objstudent)
+        public int UpdateStudent([FromBody]TempMessage message)
         {
             try
             {
-                Student student = JsonConvert.DeserializeObject<Student>(objstudent.ToString());
+                Student student = JsonConvert.DeserializeObject<Student>(message.ToString());
                 this.studentBLLManager.UpdateStudent(student);
                 return 1;
 
@@ -73,11 +75,11 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("GetById")]
-        public Student GetById([FromBody]object objstudent)
+        public Student GetById([FromBody]TempMessage message)
         {
             try
             {
-                Student student = JsonConvert.DeserializeObject<Student>(objstudent.ToString());
+                Student student = JsonConvert.DeserializeObject<Student>(message.Content.ToString());
                 return this.studentBLLManager.GetStudentId(student);
                 
 

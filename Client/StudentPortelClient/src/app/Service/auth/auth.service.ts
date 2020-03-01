@@ -25,11 +25,14 @@ export class AuthService {
       Username: authData.UserName,
       Password: authData.Password
     };
-
-   return this.http.post(ApiConstant.AccountApi.Login, body).pipe(map((res: any) => {
-                        const loginData = res;
-                          this.tokenService.SaveToken(loginData.Token);
-   }));
+    return this.http.post(ApiConstant.AccountApi.Login, body).pipe(map((res: any) => {
+      const loginData = res;
+      this.tokenService.SaveToken(loginData.Token);
+    }));
+  //  return this.http.post(ApiConstant.AccountApi.Login, body).pipe(map((res: any) => {
+  //                       const loginData = res;
+  //                         this.tokenService.SaveToken(loginData.Token);
+  //  }));
 
   }
 
@@ -50,24 +53,8 @@ export class AuthService {
 
   public removeToken() {
     this.tokenService.RemoveToken();
-    this.router.navigate(['login']);
+    this.router.navigate(['Login']);
   }
-
-  // logoutFromAll() {
-  //   this.authHttp.post(ConstantAPI.AuthAPI.LogoutAll, this.requestMessageService.GetRequestMessageWithOutObj("logout")).subscribe(res => {
-  //     this.tokenService.RemoveToken();
-  //     return true;
-  //   }, error => {
-  //     try {
-  //       this.notification.error('Failed', error);
-  //       return false;
-  //     }catch(e) {
-  //       return true;
-  //     }
-  //   })
-
-  //   return true;
-  // }
 
   /* Method for registration in the system
   * @Parameter No parameter

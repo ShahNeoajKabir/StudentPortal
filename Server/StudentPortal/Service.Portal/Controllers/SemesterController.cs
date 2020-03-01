@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SecurityBLLManager;
 using StudentPortal.DTO.DTO;
+using StudentPortal.DTO.ViewModel;
 
 namespace Service.Portal.Controllers
 {
@@ -22,11 +23,11 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("AddSemester")]
-        public int AddSemester([FromBody]object objsemester)
+        public int AddSemester([FromBody]TempMessage message)
         {
             try
             {
-                Semester semester = JsonConvert.DeserializeObject<Semester>(objsemester.ToString());
+                Semester semester = JsonConvert.DeserializeObject<Semester>(message.Content.ToString());
                 this.semesterBLLManager.AddSemester(semester);
                 return 1;
 
@@ -54,11 +55,11 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("UpdateSemester")]
-        public int UpdateSemester([FromBody]object objsemester)
+        public int UpdateSemester([FromBody]TempMessage message)
         {
             try
             {
-                Semester semester = JsonConvert.DeserializeObject<Semester>(objsemester.ToString());
+                Semester semester = JsonConvert.DeserializeObject<Semester>(message.Content.ToString());
                 this.semesterBLLManager.UpdateSemester(semester);
                 return 1;
 
@@ -70,11 +71,11 @@ namespace Service.Portal.Controllers
         }
         [HttpPost]
         [Route("GetById")]
-        public Semester GetById([FromBody]object objsemester)
+        public Semester GetById([FromBody]TempMessage message)
         {
             try
             {
-                Semester semester = JsonConvert.DeserializeObject<Semester>(objsemester.ToString());
+                Semester semester = JsonConvert.DeserializeObject<Semester>(message.Content.ToString());
                 return this.semesterBLLManager.GetSemesterById(semester);
                  
 

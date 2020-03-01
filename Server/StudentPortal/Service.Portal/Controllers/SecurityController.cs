@@ -13,6 +13,7 @@ using StudentPortal.DTO.ViewModel;
 
 namespace Service.Portal.Controllers
 {
+    [Produces("application/json")]
     [Route("api/Security")]
     [ApiController]
     public class SecurityController : ControllerBase
@@ -30,7 +31,7 @@ namespace Service.Portal.Controllers
         public JsonResult Login([FromBody]TempMessage message)
         {
             VMLogin userLogin = JsonConvert.DeserializeObject<VMLogin>(message.Content);
-           var result= this.securityBLLManager.Login(userLogin);
+           var result= this.securityBLLManager.Login(userLogin).Result;
             if (result != null)
             {
                 return new JsonResult(new { Token = this.authenticationManager.BuildToken(Converter.ObjectConvert<User>(result)) });

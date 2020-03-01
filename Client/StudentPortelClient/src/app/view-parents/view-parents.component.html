@@ -22,7 +22,7 @@
                     <table class="table table-borderless table-data3">
                         <thead>
                             <tr>
-                                <th>Student Id</th>
+                                <th>Student Roll</th>
                                 <th>Parents Name</th>
                                 <th>Email Address</th>
                                 <th>Mobile Number</th>
@@ -33,7 +33,7 @@
                         </thead>
                         <tbody  style="text-align: center;">
                             <tr *ngFor="let objparents of lstparents">
-                                <td >{{objparents.StudentId}}</td>
+                                <td >{{objparents.Student.StudentRule}}</td>
                                 <td>{{objparents.ParentsName}}</td>
                             <td>{{objparents.Email}}</td>
                             <td>{{objparents.MobileNo}}</td>

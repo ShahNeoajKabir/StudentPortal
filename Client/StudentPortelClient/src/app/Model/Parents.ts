@@ -1,3 +1,5 @@
+import { Student } from './Student';
+
 export class Parents {
     ParentsId: number;
     StudentId: number;
@@ -12,4 +14,5 @@ export class Parents {
      UpdatedBy: string;
      UpdatedDate: Date;
      Status: number;
+     Student: Student;
 }

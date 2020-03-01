@@ -18,6 +18,9 @@ import { TeacherComponent } from './teacher/teacher.component';
 import { ViewTeacherComponent } from './view-teacher/view-teacher.component';
 import { SemesterComponent } from './semester/semester.component';
 import { ViewSemesterComponent } from './view-semester/view-semester.component';
+import { httpInterceptorProviders } from './Common/interceptor';
+import { ToastrModule } from 'ngx-toastr';
+import { LayoutComponent } from './layout/layout.component';
 
 
 
@@ -38,16 +41,23 @@ import { ViewSemesterComponent } from './view-semester/view-semester.component';
     TeacherComponent,
     ViewTeacherComponent,
     SemesterComponent,
-    ViewSemesterComponent
+    ViewSemesterComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+  })
 
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [httpInterceptorProviders],
+  bootstrap: [AppComponent],
+  exports: []
+
 })
 export class AppModule { }

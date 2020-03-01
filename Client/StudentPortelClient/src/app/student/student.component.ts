@@ -40,6 +40,8 @@ export class StudentComponent implements OnInit {
     console.log(this.objstudent);
     if (this.objstudent.StudentId > 0) {
       this.studentservice.UpdateStudent(this.objstudent).subscribe(res => {
+        this.router.navigate(['/student/View']);
+
         if (res === 1) {
           console.log(res);
         }
@@ -49,6 +51,7 @@ export class StudentComponent implements OnInit {
     } else {
       this.studentservice.AddStudent(this.objstudent).subscribe(res => {
         if (res === 1) {
+          this.router.navigate(['/student/View']);
           console.log(res);
         }
         console.log(res);

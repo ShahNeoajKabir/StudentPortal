@@ -1,0 +1,57 @@
+<aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+        <a href="#">
+            <img style="width: 50px;height: 50px;" src="assets\images\icon\diuIcon.png" alt="Diu" />
+        </a>
+        <ul class="nav navbar-nav mobileVisibility">
+
+            
+
+                    <li>
+                        <a (click)="authservice.removeToken()" style="cursor: pointer;" class="btn-default">
+                            <strong>Logout</strong>
+                        </a>
+                    </li>
+
+        </ul>
+    </div>
+    <div class="menu-sidebar__content js-scrollbar1">
+        <nav class="navbar-sidebar">
+            <ul class="list-unstyled navbar__list">
+                <li >
+                    <a  routerLink="/Dashbord" style="cursor: pointer;">
+                        <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                    
+                </li>
+                <li>
+                    <a routerLink="/student/View" style="cursor: pointer;">
+                        <i class="zmdi zmdi-account-o"></i> Student</a>
+                </li>
+                <li>
+                    <a  routerLink="/user/View" style="cursor: pointer;">
+                        <i class="zmdi zmdi-account-o"></i> User</a>
+                </li>
+                <li>
+                    <a  routerLink="/parents/View" style="cursor: pointer;">
+                        <i class="zmdi zmdi-account-o"></i>Parents</a>
+                </li>
+                <li>
+                    <a routerLink="/teacher/View" style="cursor: pointer;">
+                        <i class="zmdi zmdi-account-o"></i>Teacher</a>
+                </li>
+                <li>
+                    <a routerLink="/course/View" style="cursor: pointer;">
+                       <i class="far fa-check-square"></i> Course</a>
+                </li>
+                <li>
+                  <a routerLink="/semester/View" style="cursor: pointer;">
+                     <i class="far fa-check-square"></i> Semester</a>
+              </li>
+                
+                
+            </ul>
+        </nav>
+    </div>
+  </aside>
+    <router-outlet></router-outlet>
+  
