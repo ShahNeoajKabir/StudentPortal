@@ -63,7 +63,7 @@ namespace Service.Portal.Controllers
         {
             try
             {
-                Student student = JsonConvert.DeserializeObject<Student>(message.ToString());
+                Student student = JsonConvert.DeserializeObject<Student>(message.Content.ToString());
                 this.studentBLLManager.UpdateStudent(student);
                 return 1;
 

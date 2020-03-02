@@ -50,7 +50,7 @@ export class SemesterComponent implements OnInit {
            console.log(res);
 
          }
-         console.log(res);
+        console.log(res);
 
        });
 

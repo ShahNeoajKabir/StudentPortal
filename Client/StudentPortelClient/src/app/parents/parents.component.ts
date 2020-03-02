@@ -49,7 +49,7 @@ export class ParentsComponent implements OnInit {
         if ( res === 1) {
         this.router.navigate(['/parents/View']);
 
-          console.log(res);
+        console.log(res);
 
         }
         console.log(res);

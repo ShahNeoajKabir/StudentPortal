@@ -29,69 +29,14 @@ export class AuthService {
       const loginData = res;
       this.tokenService.SaveToken(loginData.Token);
     }));
-  //  return this.http.post(ApiConstant.AccountApi.Login, body).pipe(map((res: any) => {
-  //                       const loginData = res;
-  //                         this.tokenService.SaveToken(loginData.Token);
-  //  }));
 
   }
-
-  // public CloseSession(sessionId: number): Observable<string> {
-  //     return this.authHttp.post(ConstantAPI.AuthAPI.CloseSession, this.requestMessageService.GetRequestMessageWithOutObj(sessionId))
-  //       .map(res => res.json());
-  // }
-
-  /* Method for logout and remove token
-  * @Parameter No parameter
-  * @Return Boolean
-  */
-
-  // logout() {
-  //  return this.authHttp.post(ConstantAPI.AuthAPI.Logout, this.requestMessageService.GetRequestMessageWithOutObj("logout"))
-  //     .map(res => res.json());
-  // }
 
   public removeToken() {
     this.tokenService.RemoveToken();
     this.router.navigate(['Login']);
   }
 
-  /* Method for registration in the system
-  * @Parameter No parameter
-  * @Return Boolean
-  */
-  // registration(data: any) {
-  //     return this.http.post(this.serverPath + '/api/account/registration', data);
-  // }
-
-  /* Method for change password
-  * @Parameter newPassword, confirmPassword
-  * @Return Response message from serve
-  */
-  // changePassword(changePasswordData: ChangePassword) {
-  //   return this.http.post(ApiConstant.AuthenticationApi.ChangePassword, changePasswordData);
-  // }
-
-  /* Method for request reset password when forgot password
-  * @Parameter user email
-  * @Return Response string
-  */
-  // forgotPassword(data) {
-  //   return this.http.post(this.serverPath + '', data).map(response => response.json());
-  // }
-
-  /* Method for Reset password
-  * @Parameter email, new password, confirm password
-  * @Return Response string
-  */
-  // resetPassword(data: ResetPassword) {
-  //   return this.http.post(ApiConstant.AuthenticationApi.ResetPassword, data);
-  // }
-
-  /* Method for Checked that claimed user is authenticate or not ?
-  * @Parameter No parameter
-  * @Return Boolean
-  */
   checkLogged() {
     if (this.tokenService.GetToken()) {
       return !this.tokenService.isTokenExpired();

@@ -80,9 +80,14 @@
                           </div>
                           <div class="form-group">
                             <label>Image</label>
-                            <input type="text" [(ngModel)]="objstudent.Image" name="Image" class="au-input au-input--full"  autocomplete="off">
+                            <input type="file" (change)="fileChangeEvent($event)" name="Image" class="au-input au-input--full"  autocomplete="off">
                           </div>
-                          
+                          <div class="card" style="width: 18rem;">
+                            <img   [src]="objstudent.Image" alt="Add Image" class="img img-responsive img-full">
+                            <div class="card-body">
+                              <a (click)="removeImage()" class="btn btn-primary">Remove Image</a>
+                            </div>
+                          </div> 
                         
                         <button type="submit" (click)="AddStudent()" class="btn btn-primary">Add Student</button>
                             

@@ -26,7 +26,7 @@ namespace SecurityBLLManager
 
                 student.Status = (int)StudentPortal.Common.Enum.Enum.Status.Active;
                 _student.Student.Add(student);
-                _student.SaveChangesAsync();
+                _student.SaveChanges();
 
 
                 User user = new User()
