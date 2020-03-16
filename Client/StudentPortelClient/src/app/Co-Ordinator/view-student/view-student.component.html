@@ -1,0 +1,63 @@
+
+   
+    <div class="main">
+<div class="Header">
+    <div>
+        <button class="au-btn au-btn-icon au-btn--green au-btn--small" routerLink="/student/new">
+            <i class="zmdi zmdi-plus"></i>add Student</button>
+
+    </div>
+<div>
+    <form class="form-header" action="" method="POST">
+        <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for Information &amp; reports..." />
+        <button class="au-btn--submit" type="submit">
+            <i class="zmdi zmdi-search"></i>
+        </button>
+    </form>
+</div>
+</div>
+<div class="row m-t-30">
+    <div class="col-md-12">
+        <!-- DATA TABLE-->
+        <div class="table-responsive m-b-40">
+            <table class="table table-borderless table-data3">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Student Id</th>
+                        <th>Father Name</th>
+                        <th>Mother Name</th>
+                        <th>Email Address</th>
+                        <th>Mobile Number</th>
+                        <th>Date Of Birth</th>
+                        <th>Gender</th>
+                        <th>Blood Group</th>
+                        <th>Batch</th>
+                        <th>Address</th>
+                        
+                    </tr>
+                </thead>
+                <tbody style="text-align: center;">
+                    <tr *ngFor="let objstudent of lststudent">
+                        <td >{{objstudent.StudentName}}</td>
+                        <td>{{objstudent.StudentRule}}</td>
+                        <td>{{objstudent.FatherName}}</td>
+                        <td>{{objstudent.MotherName}}</td>
+                    <td>{{objstudent.Email}}</td>
+                    <td>{{objstudent.MobileNo}}</td>
+                   <td>{{objstudent.DateOfBirth}}</td> 
+                   <td>{{objstudent.Gender}}</td> 
+                   <td>{{objstudent.BloodGroup}}</td> 
+                   <td>{{objstudent.Batch}}</td> 
+                   <td>{{objstudent.Address}}</td> 
+                    <td> <a routerLink="../{{ objstudent.StudentId }}/editstudent">Edit</a></td>
+
+                    </tr>
+                 
+                </tbody>
+            </table>
+        </div>
+        <!-- END DATA TABLE-->
+    </div>
+</div>
+</div>

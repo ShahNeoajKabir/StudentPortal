@@ -1,0 +1,76 @@
+
+<aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+        <a href="#">
+            <img style="width: 50px;height: 50px;" src="assets\images\icon\diuIcon.png" alt="Diu" />
+        </a>
+        <ul class="nav navbar-nav mobileVisibility">
+
+            
+
+                    <li>
+                        <a (click)="authservice.removeToken()" style="cursor: pointer;" class="btn-default">
+                            <strong>Logout</strong>
+                        </a>
+                    </li>
+
+        </ul>
+    </div>
+    <div class="menu-sidebar__content js-scrollbar1">
+        <nav class="navbar-sidebar">
+            <ul class="list-unstyled navbar__list">
+                <!-- <li >
+                    <a  routerLink="/Dashbord" style="cursor: pointer;">
+                        <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                    
+                </li> -->
+                <li>
+                    <a routerLink="/Student/Profile" style="cursor: pointer;">
+                        <i class="zmdi zmdi-account-o"></i> Profile</a>
+                </li>
+                <li>
+                    <a  routerLink="/Student/RegisteredCourse" style="cursor: pointer;">
+                        <i class="zmdi zmdi-account-o"></i> Registered Course</a>
+                </li>
+                <li>
+                    <a  routerLink="/Student/RegisteredCourse" style="cursor: pointer;">
+                        <i class="zmdi zmdi-account-o"></i> Add Student</a>
+                </li>
+                <li>
+                    <a  routerLink="/Student/RegisteredCourse" style="cursor: pointer;">
+                        <i class="zmdi zmdi-account-o"></i> Drop Student</a>
+                </li>
+                <li>
+                    <a  routerLink="/Student/RegisteredCourse" style="cursor: pointer;">
+                        <i class="zmdi zmdi-account-o"></i> Attendance</a>
+                </li>
+                <li>
+                    <a  routerLink="/parents/View" style="cursor: pointer;">
+                        <i class="zmdi zmdi-account-o"></i>Routine</a>
+                </li>
+                <li>
+                    <a routerLink="/teacher/View" style="cursor: pointer;">
+                        <i class="zmdi zmdi-account-o"></i>Result</a>
+                </li>
+                <li>
+                    <a routerLink="/course/View" style="cursor: pointer;">
+                       <i class="far fa-check-square"></i> Notice</a>
+                </li>
+                <li>
+                  <a routerLink="/Student/ChangePassword" style="cursor: pointer;">
+                     <i class="far fa-check-square"></i> Change Password</a>
+              </li>
+              <li>
+                <a routerLink="/semester/View" style="cursor: pointer;">
+                   <i class="far fa-check-square"></i> Payment Info</a>
+            </li>
+            
+                
+                
+            </ul>
+        </nav>
+    </div>
+  </aside>
+    <router-outlet></router-outlet>
+  
+

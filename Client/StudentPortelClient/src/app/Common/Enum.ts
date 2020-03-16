@@ -12,7 +12,7 @@ export enum Status {
 export enum UserType {
     Admin= 1,
     CoOrdinator= 2,
-    Studen= 3,
+    Student= 3,
     Accounts= 4,
     Teacher= 5,
     Parents= 6,

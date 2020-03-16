@@ -22,7 +22,14 @@ export class LoginComponent implements OnInit {
     this.authservice.login(this.objLogin).subscribe(res => {
 
       // tslint:disable-next-line:triple-equals
-        this.router.navigate(['/Dashbord']);
+        if (this.authservice.getLoggedUserType() === 3) {
+        console.log(this.authservice.getLoggedUserType());
+
+        this.router.navigate(['/Student']);
+        } else {
+          this.router.navigate(['/Co-Ordinator']);
+
+        }
 
         console.log(res);
 

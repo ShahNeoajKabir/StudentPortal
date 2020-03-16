@@ -1,0 +1,41 @@
+<div class="Main">
+    <div class="page-wrapper" style="height: 2300px;">
+        <div class="page-content--bge5">
+            <div class="container">
+                <div class="login-wrap">
+                    <div class="login-content">
+                        <div class="login-logo">
+                            <a href="#">
+                                <img src="assets\images\icon\diuIcon.png" alt="DIU User">
+                            </a>
+                        </div>
+                        <div class="login-form">
+                            <form >
+                              <div class="form-group">
+                                <label>Semester Name </label>
+                                <input type="text" [(ngModel)]="objsemester.SemesterName" name="SemesterName" class="au-input au-input--full"  autocomplete="off">
+                              </div>
+                              <div class="form-group">
+                                <label>Status</label>
+                                <select name="Status" class="form-control"
+                                [(ngModel)]="objsemester.Status">
+                            <!-- <option [value]="-1">-Select-</option> -->
+                            <option *ngFor="let status of lststatus"
+                            [value]="status.key">{{status.value}}</option>
+                    </select>
+                              </div>
+                                <button type="submit" (click)="AddSemester()" class="btn btn-primary">Add Semester</button>
+                                
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+      </div>
+    </div>
+    
+    
+
